@@ -1,0 +1,119 @@
+// Variables
+// ------------------------------
+
+@blue             : RGB(29, 170, 249);
+@blue-background  : RGB(43, 236, 254);
+
+@red              : #993333;
+@red-background   : RGB(229, 77, 66);
+
+@white : #fff;
+
+@width: 200px;
+@height : 4px;
+
+
+#generateColorLoaderLinear(@theme; @path; @background;) { 
+    .loader-linear.@{theme} {
+        .path {
+          stroke              : @path;
+        }
+
+      .linear {
+         background-color : @background;
+      }
+    }
+}
+
+.loader-linear {
+  display   : block;
+  width     : @width;
+  
+  .label {
+    text-align  : center;
+    font-size   : 16px;
+    color       : RGB(100, 100, 100);
+  }
+
+  .linear {
+     .animation(start 1.5s ease-in);
+
+     height           : 100%;
+     opacity          : 1;
+     position         : relative;
+     width            : 100%;
+     background-color : @blue-background;
+
+  }
+
+  .path {
+    stroke-dasharray    : 200, 200;
+    stroke-dashoffset   : 0;
+    stroke              : @blue;
+  
+  }
+}
+
+#generateColorLoaderLinear(theme-blue, @blue, @blue-background);
+#generateColorLoaderLinear(theme-red, @red, @red-background);
+
+.loader-linear.active {
+  .path {
+    .animation( progreslinear-active 1.5s ease-out infinite );
+  }
+}
+
+.loader-linear.hidden {
+  .path {
+    .animation(  progreslinear-hidden 1.5s ease-out infinite );
+  }
+}
+
+
+@-webkit-keyframes start {
+   from {
+    opacity :0;
+   }
+   to {
+    opacity : 1;
+   }
+}
+@keyframes start {
+   0%{
+    opacity :0;
+   }
+   100%{
+    opacity : 1;
+   }
+}
+
+@-webkit-keyframes progreslinear-active {
+ 0%{
+  stroke-dasharray: 10,200;
+  stroke-dashoffset: 0;
+ }
+ 50%{
+  stroke-dasharray: 100,200;
+  stroke-dashoffset: -50;
+ }
+ 100%{
+  stroke-dasharray: 20, 190;
+  stroke-dashoffset: -200;
+ }
+}
+
+@keyframes progreslinear-active {
+ 0%{
+  stroke-dasharray: 0,200;
+  stroke-dashoffset: 0;
+ }
+ 50%{
+  stroke-dasharray: 100,200;
+  stroke-dashoffset: -50;
+ }
+ 100%{
+  stroke-dasharray: 0,200;
+  stroke-dashoffset: -200;
+ }
+}
+
