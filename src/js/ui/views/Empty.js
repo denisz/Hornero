@@ -1,5 +1,8 @@
 /** @jsx React.DOM */
+
 var Creater 	= require('../../helpers/Creater');
+var UI 		 	= require('touchstonejs').UI;
+var Group 	 	= require('../components').Group;
 
 var View = Creater.createClass({
 	displayName : 'Empty',
@@ -9,10 +12,16 @@ var View = Creater.createClass({
 	},
 
 	render  	: function () {
-		var props = this.getSource();
-		var attrs = this.getAttributes();
+		var props = this.getSource(),
+			model = this.getModel(),
+			attrs = this.getAttributes();
 		
-		return (<div {...attrs}>{props.get('text')}</div>)
+		return (<UI.FlexBlock>
+					<div {...attrs}>
+						<div>{props.get('text')}</div>
+						<Group collection={model.getSubviews()} />
+					</div>
+				</UI.FlexBlock>)
 	}
 });
 

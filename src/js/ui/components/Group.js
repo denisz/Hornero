@@ -12,11 +12,11 @@ module.exports =  React.createBackboneClass({
 
 	getInitialState : function () {
 		return {
-			subviews : []
+			subviews : this.__getPrepareSubviews()
 		}
 	},
 
-	syncSubviews 	: function (model) {
+	__getPrepareSubviews : function () {
 		var collection = this.getCollection(),
 			subviews   = collection.map(function (model) {
 				var viewName 	= model.get('displayName'),
@@ -25,8 +25,12 @@ module.exports =  React.createBackboneClass({
 				return Creater.createComponent(view, model);
 			}, this);
 
+		return subviews
+	},
+
+	syncSubviews 	: function (model) {
 		this.setState( {
-			subviews : subviews
+			subviews : this.__getPrepareSubviews()
 		})
 	},
 

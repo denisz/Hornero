@@ -14,26 +14,26 @@ module.exports = {
 		run(props);
 	},
 
-	addBySpec : function (displayName, spec, parentID) {
+	addBySpec : function (displayName, spec, parentKey) {
 		var props = {
 			source : sources.VIEW,
 			action : actions.VIEW_ADD,
 			data   : _.defaults(spec || {}, {
 				displayName : displayName, 
-				parentID 	: parentID
+				parentKey 	: parentKey
 			})
 		};
 
 		run(props);	
 	},
 
-	addByName : function (displayName, parentID) {
+	addByName : function (displayName, parentKey) {
 		var props = {
 			source : sources.VIEW,
 			action : actions.VIEW_ADD,
 			data   : {
 				displayName : displayName, 
-				parentID 	: parentID
+				parentKey 	: parentKey
 			}
 		};
 
@@ -41,19 +41,7 @@ module.exports = {
 	},
 
 
-	remove : function (viewCid) {
-		var props = {
-			source : sources.VIEW,
-			action : actions.VIEW_REMOVE,
-			data   : {
-				cid : viewCid
-			} 
-		};
-
-		run(props);	
-	},
-
-	removeByKey : function (viewKey) {
+	remove : function (viewKey) {
 		var props = {
 			source : sources.VIEW,
 			action : actions.VIEW_REMOVE,

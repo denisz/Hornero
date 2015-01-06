@@ -71,7 +71,8 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 			break;
 
 			case format.XML :
-				result = model.toXML();
+				var json = model.toJSON();
+				result = json;//добавить обработчик xml
 			break;	
 		}
 

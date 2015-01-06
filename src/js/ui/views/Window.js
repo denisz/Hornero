@@ -9,11 +9,14 @@ var View = Creater.createClass({
 
 	render : function () {
 		var props = this.getSource(),
-			model = this.getModel();
+			model = this.getModel(),
+			attrs = this.getAttributes();
 
 		return (<UI.FlexBlock>
-					<div>{props.get('text')}</div>
-					<Group collection={model.getSubviews()} />
+					<div {...attrs}>
+						<div>{props.get('text')}</div>
+						<Group collection={model.getSubviews()} />
+					</div>
 				</UI.FlexBlock>)
 	}
 });

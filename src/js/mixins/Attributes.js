@@ -6,12 +6,11 @@ var classnames 		= require('classnames');
 **/
 module.exports = {
 	getAttributes : function () {
-		var model = this.getModel();
+		var model  = this.getModel(),
+			styles = model.getStyles();
 
-		console.log(model.get('styles'));
-		
 		return {
-			style : ReactStyle(model.get('styles'))
+			styles : ReactStyle(styles.toJSON())
 		}
 	},
 
