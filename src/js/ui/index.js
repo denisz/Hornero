@@ -1,5 +1,4 @@
 module.exports = {
-	Views : require('./views'),
-	Editor : require('./editor'),
-	Components : require('./components')
+	Views 		: require('./views'),
+	Components  : require('./components')
 }

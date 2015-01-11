@@ -8,8 +8,17 @@ var dispatcher 	= require('./AppDispatcher'),
 	listenDispatcher = require('../mixins/ListenDispatcher');
 
 var	Mock = require('../mock/tree');
+
 var getDataFromPayload = function (payload) {
 	return payload.data;
+};
+
+var getPropertyWithPayload = function (payload, property) {
+	return getDataFromPayload(payload)[property]
+};
+
+var deletePropertyWithPayload = function (payload, property) {
+	delete getDataFromPayload(payload)[property];		
 };
 
 var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
@@ -17,6 +26,7 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 		[actions.EDITOR_LOAD, 	'onEditorLoad'],
 		[actions.VIEW_ADD, 		'onViewAdd'],
 		[actions.VIEW_REMOVE, 	'onViewRemove'],
+		[actions.VIEW_UPDATE, 	'onViewUpdate']
 	],
 
 	initialize : function () {
@@ -29,11 +39,11 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 		return this.get('model');
 	},
 
-	attachModel : function (model) {
+	registerModel : function (model) {
 		this.set('model', model);
 	},
 
-	detachModel : function () {
+	unregisterModel : function () {
 		this.set('model', null);
 	},
 
@@ -44,39 +54,46 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	},
 
 	onViewAdd : function (payload) {
-		var data 	= getDataFromPayload(payload),
-			model 	= this.getAttachModel();
+		var data 	 	=  getDataFromPayload(payload),
+			parentId 	=  getPropertyWithPayload(payload, 'parentId'),
+			model 	 	=  parentId ? this.getViewById(parentId) : this.getAttachModel()
 
-		model.addSubview(data);	
+		deletePropertyWithPayload(payload, 'parentId');
+
+		if ( model ) {
+			model.set('subviews', data, constants.subviews.ADD);
+		}
 	},
 
 	onViewRemove : function (payload) {
-		var data 		= getDataFromPayload(payload.data),
-			model 		= this.getAttachModel();
+		var id 		= getPropertyWithPayload(payload, 'id'),
+			model 	= this.getViewById(id);
 
-		model.removeSubview(data);
+		if ( model ) {
+			model.destroy();	
+		}
 	},
 
+	onViewUpdate : function (payload) {
+		var	data 	= getDataFromPayload(payload),
+		 	model 	= this.getViewById(getPropertyWithPayload(payload, 'id'));
+
+		if ( model ) {
+			model.set(data);
+		}
+	},
+
+	/*Traversing
+	*/
+	getViewById : function (id) {
+		var model = this.getAttachModel();
+		return HelperModel.getById(model, id);
+	},
 
 	/**mark  - serialize **/
 	serialize : function (formatSerialize) {
-		var model 	= this.getAttachModel(),
-			format 	= constants.formatSerialize,
-			result 	= null;
-
-		switch(formatSerialize) {
-
-			case format.JSON : 
-				result = model.toJSON();
-			break;
-
-			case format.XML :
-				var json = model.toJSON();
-				result = json;//добавить обработчик xml
-			break;	
-		}
-
-		return result;
+		var model = this.getAttachModel();
+		return HelperModel.serialize(model, formatSerialize);
 	},
 
 	toJSON : function () {

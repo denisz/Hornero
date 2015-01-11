@@ -4,12 +4,12 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 var Tappable 				= require('react-tappable');
 var UI 						= require('touchstonejs').UI;
 var DEFAULT_TRANSITION 		= 'none';
-var TRANSITION_KEYS 		= require('../constants').transition;
+var Transitions 			= require('./Transitions');
 
-module.exports = {
+module.exports = _.extend({}, Transitions, {
 	getInitialStateNavigation : function () {
 		return {
-			viewTransition: this.getViewTransition(DEFAULT_TRANSITION)
+			viewTransition: this.getViewTransition(DEFAULT_TRANSITION),
 		};
 	},
 
@@ -17,30 +17,6 @@ module.exports = {
 		var views = {};
 		views[this.state.currentView] = this.getView(this.state.currentView);
 		return views;
-	},
-
-	getViewTransition: function(key) {
-		if (!_.contains(TRANSITION_KEYS, key)) {
-			console.log('Invalid View Transition: ' + key);
-			key = 'none';
-		}
-
-		var transition = {
-			key: key,
-			name: 'view-transition-' + key,
-			in: false,
-			out: false
-		};
-		if (_.contains(['reveal-from-top', 'reveal-from-bottom'], key)) {
-			transition.out = true;
-		} else if (_.contains(['show-from-left', 'show-from-right', 'reveal-from-left', 'reveal-from-right'], key)) {
-			transition.in = true;
-			transition.out = true;
-		} else if (_.contains(['fade', 'fade-contract', 'fade-expand', 'show-from-top', 'show-from-bottom'], key)) {
-			transition.in = true;
-			transition.out = true;
-		}
-		return transition;
 	},
 
 	getView: function(key) {
@@ -51,7 +27,7 @@ module.exports = {
 		
 		if (!view) {
 			return (
-				<UI.FlexLayout className="view">
+				<UI.FlexLayout>
 					<UI.FlexBlock>
 						<UI.Feedback iconKey="ion-alert-circled" iconType="danger" text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'} actionText="Okay, take me home" />
 					</UI.FlexBlock>
@@ -64,8 +40,8 @@ module.exports = {
 		}
 		
 		return React.createElement(view, _.extend(props, {
-			key: key,
-			app: this,
+			key 		 : key,
+			navigation   : this,
 			viewClassName: this.state[key + '_class'] || 'view'
 		}));
 		
@@ -95,6 +71,7 @@ module.exports = {
 		};
 		newState[key + '_class'] = 'view';
 		newState[key + '_props'] = props;
+
 		if (state) {
 			_.extend(newState, state);
 		}
@@ -102,8 +79,10 @@ module.exports = {
 	},
 
 	jsxNavigation : function () {
-		return (<ReactCSSTransitionGroup transitionName={this.state.viewTransition.name} transitionEnter={this.state.viewTransition.in} transitionLeave={this.state.viewTransition.out}>
+		return (
+				<ReactCSSTransitionGroup transitionName={this.state.viewTransition.name} transitionEnter={this.state.viewTransition.in} transitionLeave={this.state.viewTransition.out}>
 					{this.getCurrentView()}
-				</ReactCSSTransitionGroup>)
+				</ReactCSSTransitionGroup>
+			)
 	}
-}
+})

@@ -1,24 +1,27 @@
 module.exports = {
 	displayName : 'Empty',
 	text 		: 'test Mock',
-	key 		: 1,
+	id 			: 1,
 	styles 		: {
 		backgroundColor : '#A00000'
 	},
 	subviews 	: [
 		{
 			displayName : 'Empty',
-			key 		: 2,
-			text 		: 'test2 Mock',
+			id 		: 2,
 			styles 		: {
-				border : '1px solid red',
-				marginTop : 10,
+				border  		: '1px solid red',
+				marginTop 		: 10,
+				color  			: 'black',
+				fontFamily 		: 'Trebushet',
+				fontSize 		: 12,
+				fontWeight 		: 'bold',
 				backgroundColor : 'white'
 			},
 			subviews : [
 				{	
 					displayName : 'Empty',
-					key 		: 5,
+					id 		: 5,
 					text 		: 'test5 Mock',
 					styles 		: {
 						border		 	: '1px solid violet',
@@ -26,9 +29,16 @@ module.exports = {
 						marginBottom 	: 40
 					},	
 					subviews : [
+						{
+							displayName : 'Empty',
+							id 	: 7,
+							styles : {
+								textAlign : 'center'
+							}
+						},
 						{	
 							displayName : 'Empty',
-							key 		: 6,
+							id 		: 6,
 							text 		: 'test6 Mock',
 							styles 		: {
 								border		 	: '1px solid green',
@@ -42,7 +52,7 @@ module.exports = {
 		},
 		{
 			displayName : 'Empty',
-			key 		: 3,
+			id 		: 3,
 			text 		: 'test3 Mock',
 			styles 		: {
 				border : '1px solid green'
@@ -50,7 +60,7 @@ module.exports = {
 		},
 		{
 			displayName : 'Empty',
-			key 		: 4,
+			id 		: 4,
 			text 		: 'test4 Mock',
 			styles 		: {
 				border : '1px solid blue',

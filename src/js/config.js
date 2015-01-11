@@ -1,3 +1,1 @@
-module.exports = {
-	debug : true
-}
+module.exports = require('./configs/app')

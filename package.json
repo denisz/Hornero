@@ -15,6 +15,7 @@
     "superagent"      : "^0.21.0",
     "touchstonejs"    : "^0.1.2",
     "underscore"      : "^1.7.0",
+    "bootstrap"       : "^3.3.1",
     "react-bootstrap" : "^0.13.0",
     "xmlbuilder"      : "^2.4.5",
     "backbone"        : "^1.1.2",
@@ -28,7 +29,10 @@
     "underscore.string" : "^2.4.0",
     "react-video"       : "^1.1.5",
     "react-grid-layout" : "^0.6.1",
-    "keymaster"         : "1.6.2"
+    "keymaster"         : "1.6.2",
+    "lorem-ipsum"       : "^1.0.1",
+    "ease-component"    : "^1.0.0",
+    "react-resizable"   : "^0.2.0"
   },
   "devDependencies": {
     "brfs"            : "^1.2.0",

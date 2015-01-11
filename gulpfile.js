@@ -70,7 +70,7 @@ function doBundle(target, name, dest) {
 		gutil.log('Browserify Error', e);
 	})
 	.pipe(source(name))
-	.pipe(streamify(uglify()))
+	// .pipe(streamify(uglify())) //исправить потом
 	.pipe(gulp.dest(dest));
 }
 

@@ -5,26 +5,27 @@ var React = require('react/addons');
 
 var classnames  = require('classnames');
 var Touchstone  = require('touchstonejs');
-var Mixins 		= require('./mixins');
+var Navigation 	= require('./mixins/Navigation');
 
 var config 		= require('./config');
 var utils 		= require('./utils');
-var views 		= require('./ui/editor');
 
 var Services 	= require('./services');
 var Helpers 	= require('./helpers');
 
+var views 		= require('./ui/editor/Pages');
+
 require('./globalReferences');
 
 var App = React.createClass({
-	mixins : [ Mixins.Navigation ],
+	mixins : [ Navigation ],
 
 	views: function () {
 		return views;
 	}, 
 
 	getInitialState : function () {
-		return  _.extend( {
+		return  _.defaults( {
 			currentView : 'Workspace',
 			online 		: true,
 			isNativeApp : utils.common.isCordova()

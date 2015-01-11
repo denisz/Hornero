@@ -46,13 +46,13 @@ module.exports = {
 	handleAction : function (actions, payload) {
 		var actionName = this._checkPayload(payload);
 
-		console.log("Processing action " + actionName);
-
 		if (actions) {
 			var handleName 	= actions[actionName],
 				handle 		= this[handleName];
 
 			if (typeof handle === 'function') {
+				console.log("Processing action " + actionName);
+
 				try {
 					handle.apply(this, [payload]);	
 				} catch(e) {

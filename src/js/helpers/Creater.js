@@ -19,33 +19,20 @@ module.exports = {
         return ReactBackbone.createBackboneClass(spec);
 	},
 
-	createFactory : function (view, _model) {
-		var factory = React.createFactory(view);
-
-		if ( _model ) {
-			factory._model = _model;	
-		}
-		
-		return factory;
-	},
-
 	createWindow 	: function (props) {
-		var Model 		= HelperModel.getDefaultModel();
-		var WindowView 	= window.HelperView.getViewByName('Window');
+		props = _.defaults({}, props, { displayName : 'window' });
 		
-		return this.createComponent(WindowView, new Model(props));
+		return this.createComponent( this.createModel( props ) );
 	},
 
-	createComponent : function (factoryView, model) {
-		if (factoryView._model) {
-			model = new factoryView._model(model);
-		}
+	createModel : function (attributes, options) {
+		return window.HelperModel.createInstance(attributes, options) 
+	},
 
-		if (!model || !(model instanceof Backbone.Model)) {
-			var Model = HelperModel.getDefaultModel();
-			model = new Model(model);
-		}
+	createComponent : function (model) {
+		var view 		= window.HelperView.getViewByName(model.get('displayName'));
+		var factoryView = React.createFactory(view);
 
-		return factoryView({ model : model, key : model.get('key') })
+		return factoryView({ model : model, key : model.id })
 	}
 };

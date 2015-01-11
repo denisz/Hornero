@@ -10,5 +10,8 @@ module.exports = [
 	'reveal-from-left',
 	'reveal-from-right',
 	'reveal-from-top',
-	'reveal-from-bottom'
+	'reveal-from-bottom',
+
+	'show-panel-right',
+	'reveal-panel-right'
 ];

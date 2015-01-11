@@ -33,8 +33,10 @@ module.exports = React.createClass({
 			active :  this.state.active,
 		}, this.props.viewClassName, 'theme-' + this.props.theme);
 
+		var label = this.props.label ? <div className="label">{this.props.label}</div> : null;
+
 		return (<div className={classNames} styles={inlineStylesDiv}>
-				  <div className="label">{this.props.label}</div>	
+				  {label}
 				  <svg className="linear" styles={inlineStyleSvg}>
 				    <line x1="0" y1={this.props.height / 2} x2={this.props.width} y2={this.props.height / 2} className="path" fill="none" strokeWidth={this.props.height} strokeMiterlimit="0"/>
 				  </svg>

@@ -3,5 +3,7 @@ module.exports = {
 	actions 			: require('./actions'),
 	sources 			: require('./sources'),
 	categories  		: require('./categories'),
-	formatSerialize 	: require('./formatSerialize') 
+	subviews 			: require('./subviews'),
+	formatSerialize 	: require('./formatSerialize'),
+	defaultsProperties  : require('./defaultsProperties')	
 }

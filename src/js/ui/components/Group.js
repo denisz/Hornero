@@ -18,12 +18,7 @@ module.exports =  React.createBackboneClass({
 
 	__getPrepareSubviews : function () {
 		var collection = this.getCollection(),
-			subviews   = collection.map(function (model) {
-				var viewName 	= model.get('displayName'),
-					view 		= window.HelperView.getViewByName( viewName );
-
-				return Creater.createComponent(view, model);
-			}, this);
+			subviews   = collection.map(Creater.createComponent, this);
 
 		return subviews
 	},

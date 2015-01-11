@@ -3,20 +3,19 @@
 var Creater  			= require('../../helpers/Creater');
 var UI 		 			= require('touchstonejs').UI;
 var Spinner 			= require('../components/Spinner');
+var Styles 				= require('../components/Styles');
+var React 				= require('react/addons');
 
-var View = Creater.createClass({
+module.exports = Creater.createClass({
 	displayName : 'Spinner',
 
 	render : function () {
-		var attrs = this.getAttributes();
+		var model = this.getModel();
 
 		return (<UI.FlexBlock>
-					<div {...attrs}>
-						<Spinner spinnerName='circle' />
-					</div>
+					<Styles model={model.getStyles()}>
+						<Spinner spinnerName={model.get('name')} />
+					</Styles>
 				</UI.FlexBlock>)
 	}
 });
-
-
-module.exports = Creater.createFactory(View);

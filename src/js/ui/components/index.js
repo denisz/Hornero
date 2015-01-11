@@ -1,7 +1,10 @@
 module.exports = {
 	Group 			: require('./Group'),
+	Styles 			: require('./Styles'),
 	Progresslinear 	: require('./Progresslinear'),
 	Progresscircle 	: require('./Progresscircle'),
 	Pivotedit 		: require('./PivotEdit'),
-	Spinner 		: require('./Spinner')
+	Spinner 		: require('./Spinner'),
+	SideBar 		: require('./SideBar'),
+	Navigation 		: require('./Navigation')
 }

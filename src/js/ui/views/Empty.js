@@ -3,8 +3,10 @@
 var Creater 	= require('../../helpers/Creater');
 var UI 		 	= require('touchstonejs').UI;
 var Group 	 	= require('../components').Group;
+var Styles 		= require('../components').Styles;
+var React 		= require('react/addons');
 
-var View = Creater.createClass({
+module.exports = Creater.createClass({
 	displayName : 'Empty',
 
 	handleClick : function () {
@@ -17,12 +19,10 @@ var View = Creater.createClass({
 			attrs = this.getAttributes();
 		
 		return (<UI.FlexBlock>
-					<div {...attrs}>
+					<Styles model={model.getStyles()}>
 						<div>{props.get('text')}</div>
 						<Group collection={model.getSubviews()} />
-					</div>
+					</Styles>
 				</UI.FlexBlock>)
 	}
 });
-
-module.exports = Creater.createFactory(View);

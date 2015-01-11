@@ -16,7 +16,11 @@ module.exports = keymirror({
 	EDITOR_LOAD 	: null,
 	EDITOR_SAVE 	: null,
 	EDITOR_SYNC 	: null,
-	EDITOR_REVERT 	: null
+	EDITOR_REVERT 	: null,
+	EDITOR_SHOW_APP_MENU : null,
+	EDITOR_HIDE_APP_MENU : null,
+	EDITOR_SHOW_PANEL_SETTINGS : null,
+	EDITOR_HIDE_PANEL_SETTINGS : null,
 	// API
 
 

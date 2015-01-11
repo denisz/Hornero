@@ -1,26 +1,29 @@
-var React;
-
-React = require('react/addons');
+var React = require('react/addons');
 
 module.exports = React.createClass({
   displayName: "SpinKit",
+
   getDefaultProps: function() {
     return {
-      cssRequire: false,
-      spinnerName: 'three-bounce',
-      fadeIn: false
+      cssRequire  : false,
+      spinnerName : 'three-bounce',
+      fadeIn      : false
     };
   },
+
   propTypes: {
-    cssRequire: React.PropTypes.bool.isRequired,
-    spinnerName: React.PropTypes.string.isRequired,
-    fadeIn: React.PropTypes.bool.isRequired
+    cssRequire  : React.PropTypes.bool.isRequired,
+    spinnerName : React.PropTypes.string.isRequired,
+    fadeIn      : React.PropTypes.bool.isRequired
   },
+
   render: function() {
     var classes, cx;
     cx = React.addons.classSet;
+    
     classes = cx({
       spinner: true,
+      "inline-block" : true,
       "fade-in": this.props.fadeIn
     });
     
