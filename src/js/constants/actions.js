@@ -1,6 +1,6 @@
-var keymirror = require('keymirror');
+var keyMirror = require('keyMirror');
 
-module.exports = keymirror({
+module.exports = keyMirror({
 	// view actions
 	VIEW_ADD 		: null,
 	VIEW_REMOVE 	: null,

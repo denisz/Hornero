@@ -2,8 +2,7 @@
 
 var Creater 	= require('../../helpers/Creater');
 var UI 		 	= require('touchstonejs').UI;
-var Group 	 	= require('../components').Group;
-var Styles 		= require('../components').Styles;
+var HUD 	 	= require('../components');
 var React 		= require('react/addons');
 
 module.exports = Creater.createClass({
@@ -19,10 +18,13 @@ module.exports = Creater.createClass({
 			attrs = this.getAttributes();
 		
 		return (<UI.FlexBlock>
-					<Styles model={model.getStyles()}>
+					<HUD.Styles model={model.getStyles()}>
 						<div>{props.get('text')}</div>
-						<Group collection={model.getSubviews()} />
-					</Styles>
+						<HUD.Group collection={model.getSubviews()} />
+					</HUD.Styles>
+					<HUD.BuildHelper mode={this.state.mode}>
+						<HUD.ActionButton onTap={this.handleClick}>Add content</HUD.ActionButton>
+					</HUD.BuildHelper>
 				</UI.FlexBlock>)
 	}
 });

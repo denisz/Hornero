@@ -32,7 +32,8 @@
     "keymaster"         : "1.6.2",
     "lorem-ipsum"       : "^1.0.1",
     "ease-component"    : "^1.0.0",
-    "react-resizable"   : "^0.2.0"
+    "react-resizable"   : "^0.2.0",
+    "react-draggable"   : "^0.4.0"
   },
   "devDependencies": {
     "brfs"            : "^1.2.0",

@@ -5,5 +5,6 @@ module.exports = {
 	categories  		: require('./categories'),
 	subviews 			: require('./subviews'),
 	formatSerialize 	: require('./formatSerialize'),
-	defaultsProperties  : require('./defaultsProperties')	
+	modeView 			: require('./modeView'),
+	modeApp 			: require('./modeApp')
 }

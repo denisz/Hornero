@@ -1,13 +1,31 @@
 /** @jsx React.DOM */
+
 var _ 	  			= require('underscore')	
 var React 			= require('react/addons');
 var ReactBackbone 	= require('react.backbone');
 var UI 				= require('touchstonejs').UI;
 var Creater 		= require('../../helpers/Creater');
 
+var ViewContextTypes = require('../../mixins/ViewContextTypes');
+
 module.exports =  React.createBackboneClass({
+	displayName : 'Group',
+
+	mixins : [ViewContextTypes.childrenContext],
+
+	propTypes: {
+	    componentClass: React.PropTypes.any,
+	    collection : React.PropTypes.object.isRequired
+	},
+
 	onModelChange : function () {
 		this.syncSubviews();
+	},
+
+	getDefaultProps : function () {
+		return {
+			componentClass : 'div'
+		}
 	},
 
 	getInitialState : function () {
@@ -16,11 +34,11 @@ module.exports =  React.createBackboneClass({
 		}
 	},
 
+	//передача контекста
 	__getPrepareSubviews : function () {
-		var collection = this.getCollection(),
-			subviews   = collection.map(Creater.createComponent, this);
-
-		return subviews
+		return React.withContext(this.context, function () {
+		   return this.getCollection().map(Creater.createComponent); 
+		}.bind(this));
 	},
 
 	syncSubviews 	: function (model) {
@@ -35,6 +53,10 @@ module.exports =  React.createBackboneClass({
 
 	render 			: function () {
 		var subviews = this.getSubviews();
-		return (<div>{subviews}</div>)
+
+		var ComponentClass 	= this.props.componentClass;
+    	var other 			= _.omit(this.props, 'componentClass', 'collection');
+		
+		return (React.createElement(ComponentClass, other, subviews));
 	}
 })

@@ -1,11 +1,13 @@
 /** @jsx React.DOM */
 
 var _ = require('underscore');
+var Backbone = require('backbone');
 var React = require('react/addons');
 
 var classnames  = require('classnames');
 var Touchstone  = require('touchstonejs');
 var Navigation 	= require('./mixins/Navigation');
+var AppContextTypes  = require('./mixins/AppContextTypes');
 
 var config 		= require('./config');
 var utils 		= require('./utils');
@@ -18,7 +20,7 @@ var views 		= require('./ui/editor/Pages');
 require('./globalReferences');
 
 var App = React.createClass({
-	mixins : [ Navigation ],
+	mixins : [ Navigation, AppContextTypes.parentContext ],
 
 	views: function () {
 		return views;
@@ -28,8 +30,15 @@ var App = React.createClass({
 		return  _.defaults( {
 			currentView : 'Workspace',
 			online 		: true,
+			mode 		: config.mode,
 			isNativeApp : utils.common.isCordova()
 		}, this.getInitialStateNavigation() )
+	},
+
+	getChildContext: function() {
+		return {
+			app : this
+		}
 	},
 
 	render : function () {

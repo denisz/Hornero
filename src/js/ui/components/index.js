@@ -6,5 +6,7 @@ module.exports = {
 	Pivotedit 		: require('./PivotEdit'),
 	Spinner 		: require('./Spinner'),
 	SideBar 		: require('./SideBar'),
-	Navigation 		: require('./Navigation')
+	Navigation 		: require('./Navigation'),
+	ActionButton	: require('./ActionButton'),
+	BuildHelper 	: require('./BuildHelper')
 }

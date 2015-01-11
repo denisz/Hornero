@@ -7,9 +7,6 @@ var classnames 		= require('classnames');
 var Transitions 	= require('../../mixins/Transitions');
 var UI 				= require('touchstonejs').UI;
 
-var DEFAULT_TRANSITION_SHOW  = 'show-panel-right';
-var DEFAULT_TRANSITION_HIDE  = 'reveal-panel-right';
-
 module.exports =  React.createClass({
 	mixins : [Transitions],
 	propTypes: {
@@ -22,8 +19,8 @@ module.exports =  React.createClass({
 			side 			: 'right',
 			width   		: 300,
 			isOpened  		: true ,
-			showTransition  : DEFAULT_TRANSITION_SHOW,
-			hideTransition 	: DEFAULT_TRANSITION_HIDE
+			showTransition  : 'show-panel-right',
+			hideTransition 	: 'reveal-panel-right'
 		}
 	},
 
@@ -47,17 +44,14 @@ module.exports =  React.createClass({
 
 	toggle: function() {
     	this.setProps({ isOpened: !this.props.isOpened });
-    	return this;
   	},
 
   	close: function() {
     	this.setProps({ isOpened: false });
-    	return this;
   	},
 
   	open: function() {
     	this.setProps({ isOpened: true });
-    	return this;
   	},
 
 	render 			: function () {

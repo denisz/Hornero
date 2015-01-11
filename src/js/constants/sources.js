@@ -1,4 +1,4 @@
-var keymirror = require('keymirror');
+var keymirror = require('keyMirror');
 
 module.exports = keymirror({
 	VIEW 	: null,

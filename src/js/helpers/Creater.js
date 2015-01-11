@@ -3,7 +3,9 @@ var _ 				= require('underscore'),
 	ReactBackbone 	= require('react.backbone'),
 	React 			= require('react/addons'),
 	Source 			= require('../mixins/Source'),
-	Attributes 		= require('../mixins/Attributes');
+	States 			= require('../mixins/ViewStates'),
+	Attributes 		= require('../mixins/Attributes'),
+	ContextTypes 	= require('../mixins/ViewContextTypes');
 
 module.exports = {
 	createClass  : function (spec) {
@@ -13,7 +15,9 @@ module.exports = {
 
 		spec.mixins = spec.mixins.concat([
 			Source,
-			Attributes
+			Attributes,
+			States,
+			ContextTypes.childrenContext
 		]);
 
         return ReactBackbone.createBackboneClass(spec);

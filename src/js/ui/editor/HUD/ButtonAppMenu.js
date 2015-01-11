@@ -2,6 +2,7 @@
 
 var React 			= require('react/addons');
 var UI 				= require('touchstonejs').UI;
+var HUD 			= require('../../components');
 var Actions 		= require('../../../actions').Editor;
 
 module.exports = React.createClass({
@@ -13,7 +14,7 @@ module.exports = React.createClass({
 
 	render : function () {
 		return (
-				<div className="e-button_app_menu" onClick={this.handleClick}> Button Menu</div>
+				<HUD.ActionButton className="e-button_app_menu" onTap={Actions.showPanelSettingsWithModel}>+</HUD.ActionButton>
 			)
 	}
 });

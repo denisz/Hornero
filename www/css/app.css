@@ -4028,7 +4028,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #ffffff;
+  background-color: #efeff4;
   overflow: hidden;
   position: fixed;
   -webkit-font-smoothing: antialiased;
@@ -13642,6 +13642,16 @@ button.close {
 .e-side_bar.m-side-bottom {
   bottom: 0;
   height: 300px;
+}
+.e-button_app_menu {
+  position: absolute;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  top: 10px;
+  left: 10px;
+  background-color: #fd4482;
 }
 .view-transition-show-panel-right-enter,
 .view-transition-show-panel-right-leave {

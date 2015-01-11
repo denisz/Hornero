@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 var Models  			= require('../models');
-var defaultsProperties 	= require('../constants/defaultsProperties');
+var defaultsProperties 	= require('../settings/properties');
 var Common 	 			= require('../utils/common'); 
 var constants 			= require('../constants');
 

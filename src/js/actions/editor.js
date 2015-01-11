@@ -17,31 +17,31 @@ module.exports = {
 		
 	},
 
-	showPanelSettingsWithModel : function (model) {
+	/**Панель настроек компонентов**/
+	showPanelSettingsWithModel : function (model, filter) {
 		var props = {
 			action 	: actions.EDITOR_SHOW_PANEL_SETTINGS,
 			source 	: sources.EDITOR,
 			data	: {
-				model : model
+				model : model,
+				filter: filter
 			}
 		};
 		
 		run(props)
 	},
 
-	hidePanelSettingsWithModel : function (model) {
+	hidePanelSettingsWithModel : function () {
 		var props = {
 			action 	: actions.EDITOR_HIDE_PANEL_SETTINGS,
 			source 	: sources.EDITOR,
-			data	: {
-				model : model
-			}
+			data	: {}
 		};
 		
 		run(props)
 	},
 
-
+	/**Основное меню редактора**/
 	showAppMenu : function (model) {
 		var props = {
 			action 	: actions.EDITOR_SHOW_APP_MENU,
@@ -58,9 +58,7 @@ module.exports = {
 		var props = {
 			action 	: actions.EDITOR_HIDE_APP_MENU,
 			source 	: sources.EDITOR,
-			data	: {
-				model : model
-			}
+			data	: {}
 		};
 		
 		run(props)

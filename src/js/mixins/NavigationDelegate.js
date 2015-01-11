@@ -1,12 +1,12 @@
 module.exports = {
 	showView: function() {
-		this.props.navigation.showView.apply(this.props.navigation, arguments);
+		this.context.navigation.showView.apply(this.context.navigation, arguments);	
 	},
 	
 	showViewFn: function() {
 		var args = arguments;
 		return function() {
-			this.props.navigation.showView.apply(this.props.navigation, args);
+			this.context.navigation.showView.apply(this.context.navigation, args);
 		}.bind(this);
 	}
 }
