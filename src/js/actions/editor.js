@@ -17,23 +17,27 @@ module.exports = {
 		
 	},
 
+	preview : function () {
+		
+	},
+
 	/**Панель настроек компонентов**/
-	showPanelSettingsWithModel : function (model, filter) {
+	showFloatPanelWith : function (panelName, panelProps) {
 		var props = {
-			action 	: actions.EDITOR_SHOW_PANEL_SETTINGS,
+			action 	: actions.EDITOR_SHOW_FLOAT_PANEL,
 			source 	: sources.EDITOR,
 			data	: {
-				model : model,
-				filter: filter
+				panelName 	: panelName,
+				props 		: panelProps
 			}
 		};
 		
 		run(props)
 	},
 
-	hidePanelSettingsWithModel : function () {
+	hideFloatPanel : function () {
 		var props = {
-			action 	: actions.EDITOR_HIDE_PANEL_SETTINGS,
+			action 	: actions.EDITOR_HIDE_FLOAT_PANEL,
 			source 	: sources.EDITOR,
 			data	: {}
 		};

@@ -1,14 +1,13 @@
 module.exports = {
 	displayName : 'Empty',
 	text 		: 'test Mock',
-	id 			: 1,
 	styles 		: {
-		backgroundColor : '#A00000'
+		// backgroundColor : '#A00000'
 	},
 	subviews 	: [
 		{
 			displayName : 'Empty',
-			id 		: 2,
+			text 		: 'Haha',
 			styles 		: {
 				border  		: '1px solid red',
 				marginTop 		: 10,
@@ -21,21 +20,210 @@ module.exports = {
 		},
 		{
 			displayName : 'Row',
-			id : 3,
 			subviews : [
 				{
-					displayName : 'Col',
-					id : 4,
-					md : 6,
-					xs : 6
-				},
-				{
-					displayName : 'Col',
-					id : 5,
-					md : 6,
-					xs : 6
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
 				}
-			]
+			],
+		},
+		{
+			displayName : 'Row',
+		},
+		{
+			displayName : 'Row',
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Row',
+					subviews : [	
+						{
+							displayName : 'Col',
+							subviews : [	
+								{
+									displayName : 'Empty'
+								}	
+							]
+						}
+					]
+				}
+			],
 		}
 
 	]

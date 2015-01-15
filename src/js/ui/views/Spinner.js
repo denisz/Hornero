@@ -6,7 +6,7 @@ var Spinner 			= require('../components/Spinner');
 var Styles 				= require('../components/Styles');
 var React 				= require('react/addons');
 
-module.exports = Creater.createClass({
+module.exports = Creater.createView({
 	displayName : 'Spinner',
 
 	render : function () {

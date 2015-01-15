@@ -1,4 +1,4 @@
-var	Views  = require('../ui').Views;
+var	Views  = require('../ui/views');
 
 var DEFAULT_VIEW_NAME 	= 'Empty';
 var DEFAULT_VIEW = Views[DEFAULT_VIEW_NAME];
@@ -9,7 +9,12 @@ var HelperView = {
 	},
 	getDefaultView : function () {
 		return DEFAULT_VIEW
+	},
+
+	getAllViews : function () {
+		return Views;
 	}
+	
 };
 
 window.HelperView = HelperView;

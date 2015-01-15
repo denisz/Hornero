@@ -7,7 +7,10 @@
 
 @import "ionicons/ionicons.less";
 @import "../../node_modules/touchstonejs/less/touchstone.less";
-@import "hornero.less";
+
+//core
+@import "core/layout.less";
+@import "core/animations.less";
 
 // // bootstrap
 @import "../../node_modules/bootstrap/less/bootstrap.less";
@@ -16,11 +19,12 @@
 
 // // plugins
 // @import "plugins/ladda.less";
-@import "plugins/progresslinear.less";
-@import "plugins/progresscircle.less";
-@import "plugins/spinner.less";
-@import "plugins/sidebar.less";
-@import "plugins/button-app-menu.less";
+@import "components/progresslinear.less";
+@import "components/progresscircle.less";
+@import "components/spinner.less";
+@import "components/sidebar.less";
+@import "components/button-app-menu.less";
 
-// animations
-@import "animations.less";
+
+// editor
+@import "editor/views/library.less";

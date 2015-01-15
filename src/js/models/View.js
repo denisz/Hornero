@@ -5,9 +5,9 @@ var Transform   = require('../mixins/Transform');
 var _ 			= require('underscore');
 
 var Model = Backbone.Model.extend(_.extend({}, Sync, Transform, {
-	getDefaults : function () {
+	defaults : function () {
 		return {
-			id 	  : _.uniqueId('key_'),
+			id 	  : _.uniqueId('key_')
 		};
 	},
 

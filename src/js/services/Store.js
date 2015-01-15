@@ -9,18 +9,6 @@ var dispatcher 	= require('./AppDispatcher'),
 
 var	Mock = require('../mock/tree');
 
-var getDataFromPayload = function (payload) {
-	return payload.data;
-};
-
-var getPropertyWithPayload = function (payload, property) {
-	return getDataFromPayload(payload)[property]
-};
-
-var deletePropertyWithPayload = function (payload, property) {
-	delete getDataFromPayload(payload)[property];		
-};
-
 var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	actionsDispatcher : [
 		[actions.EDITOR_LOAD, 	'onEditorLoad'],
@@ -54,11 +42,11 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	},
 
 	onViewAdd : function (payload) {
-		var data 	 	=  getDataFromPayload(payload),
-			parentId 	=  getPropertyWithPayload(payload, 'parentId'),
+		var data 	 	=  HelperPayload.getData(payload),
+			parentId 	=  HelperPayload.getProperty(payload, 'parentId'),
 			model 	 	=  parentId ? this.getViewById(parentId) : this.getAttachModel()
 
-		deletePropertyWithPayload(payload, 'parentId');
+		HelperPayload.deleteProperty(payload, 'parentId');
 
 		if ( model ) {
 			model.set('subviews', data, constants.subviews.ADD);
@@ -66,7 +54,7 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	},
 
 	onViewRemove : function (payload) {
-		var id 		= getPropertyWithPayload(payload, 'id'),
+		var id 		= HelperPayload.getProperty(payload, 'id'),
 			model 	= this.getViewById(id);
 
 		if ( model ) {
@@ -75,8 +63,8 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	},
 
 	onViewUpdate : function (payload) {
-		var	data 	= getDataFromPayload(payload),
-		 	model 	= this.getViewById(getPropertyWithPayload(payload, 'id'));
+		var	data 	= HelperPayload.getData(payload),
+		 	model 	= this.getViewById( HelperPayload.getProperty(payload, 'id') );
 
 		if ( model ) {
 			model.set(data);

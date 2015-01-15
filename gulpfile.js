@@ -60,8 +60,8 @@ gulp.task('images', function() {
 });
 
 gulp.task('fonts', function() {
-	return gulp.src('src/fonts/**')
-	.pipe(gulp.dest('www/fonts'));
+	return gulp.src(['src/fonts/**', 'node_modules/bootstrap/fonts/**'])
+		.pipe(gulp.dest('www/fonts'));
 });
 
 function doBundle(target, name, dest) {

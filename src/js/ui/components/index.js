@@ -8,5 +8,7 @@ module.exports = {
 	SideBar 		: require('./SideBar'),
 	Navigation 		: require('./Navigation'),
 	ActionButton	: require('./ActionButton'),
-	BuildHelper 	: require('./BuildHelper')
+	BuildHelper 	: require('./BuildHelper'),
+	TableView 		: require('./TableView'),
+	Toggle 			: require('./Toggle')
 }

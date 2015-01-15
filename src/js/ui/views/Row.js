@@ -6,7 +6,9 @@ var HUD 	 	= require('../components');
 var React 		= require('react/addons');
 var BS 			= require('react-bootstrap');
 
-module.exports = Creater.createClass({
+var Group 		= require('./Group');
+
+module.exports = Creater.createView({
 	displayName : 'Container',
 
 	handleClick : function () {
@@ -18,7 +20,9 @@ module.exports = Creater.createClass({
 			model = this.getModel();
 		
 		return (<UI.FlexBlock>
-					<HUD.Group collection={model.getSubviews()} componentClass={BS.Row}/>
+					<HUD.Styles model={model.getStyles()}>
+						<Group collection={model.getSubviews()} componentClass={BS.Row}/>
+					</HUD.Styles>
 					<HUD.BuildHelper mode={this.state.mode}>
 						<HUD.ActionButton onTap={this.handleClick}>Add content</HUD.ActionButton>
 					</HUD.BuildHelper>

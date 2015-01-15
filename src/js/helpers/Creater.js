@@ -1,6 +1,5 @@
 var _ 				= require('underscore'),
 	Backbone		= require('Backbone'),
-	ReactBackbone 	= require('react.backbone'),
 	React 			= require('react/addons'),
 	Source 			= require('../mixins/Source'),
 	States 			= require('../mixins/ViewStates'),
@@ -8,7 +7,7 @@ var _ 				= require('underscore'),
 	ContextTypes 	= require('../mixins/ViewContextTypes');
 
 module.exports = {
-	createClass  : function (spec) {
+	createView  : function (spec) {
 		spec = _.defaults(spec || {}, {
 			mixins : []
 		});
@@ -20,7 +19,11 @@ module.exports = {
 			ContextTypes.childrenContext
 		]);
 
-        return ReactBackbone.createBackboneClass(spec);
+        return React.createBackboneClass(spec);
+	},
+
+	createField 	: function (spec) {
+		return React.createClass(spec)
 	},
 
 	createWindow 	: function (props) {

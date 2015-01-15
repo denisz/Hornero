@@ -1,4 +1,7 @@
-module.exports = {
+var NavigationContextTypes = require('./NavigationContextTypes');
+var _ = require('underscore');
+
+module.exports = _.extend({}, NavigationContextTypes.childrenContext, {
 	showView: function() {
 		this.context.navigation.showView.apply(this.context.navigation, arguments);	
 	},
@@ -9,4 +12,4 @@ module.exports = {
 			this.context.navigation.showView.apply(this.context.navigation, args);
 		}.bind(this);
 	}
-}
+})

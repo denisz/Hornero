@@ -5,8 +5,7 @@ var UI 				= require('touchstonejs').UI;
 var AppDispatcher 	= require('../../../services/AppDispatcher');
 var Creater 		= require('../../../helpers/Creater');
 var Actions 		= require('../../../actions').Editor;
-
-var HUD 			= require('../HUD');
+var Composition 	= require('../composition');
 
 module.exports =  React.createClass({
 	displayName : 'Workspace',
@@ -22,11 +21,9 @@ module.exports =  React.createClass({
 	render : function () {
 		return (
 			<UI.FlexLayout className={this.props.viewClassName}>
-				<UI.FlexBlock>
-					<HUD.Canvas />
-					<HUD.PanelSettings />
-					<HUD.ButtonAppMenu />					
-				</UI.FlexBlock>
+				<Composition.Canvas />
+				<Composition.FloatPanel />
+				<Composition.ButtonAppMenu />					
 			</UI.FlexLayout>
 			)
 	}

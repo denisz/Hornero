@@ -3985,7 +3985,6 @@ body {
   width: 100%;
   height: 100%;
   background: #ffffff;
-  overflow: hidden;
   position: fixed;
 }
 .app-wrapper {
@@ -4157,8 +4156,8 @@ body {
 .view-transition-show-from-top-leave,
 .view-transition-show-from-bottom-enter,
 .view-transition-show-from-bottom-leave {
-  -webkit-animation-duration: 380ms;
-  animation-duration: 380ms;
+  -webkit-animation-duration: 480ms;
+  animation-duration: 480ms;
   -webkit-animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -4166,8 +4165,8 @@ body {
 .view-transition-show-from-left-leave,
 .view-transition-show-from-right-enter,
 .view-transition-show-from-right-leave {
-  -webkit-animation-duration: 320ms;
-  animation-duration: 320ms;
+  -webkit-animation-duration: 460ms;
+  animation-duration: 460ms;
   -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -6269,6 +6268,45 @@ fieldset[disabled] .btn-link {
 .Toggle.purple > .Toggle-item.active {
   background-color: #5856d6;
   color: white;
+}
+.navigation-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  overflow: hidden;
+}
+.view-transition-show-panel-right-enter,
+.view-transition-show-panel-right-leave {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+}
+.view-transition-reveal-panel-right-enter,
+.view-transition-reveal-panel-right-leave {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+}
+.view-transition-show-panel-right-enter {
+  -webkit-animation-name: viewShowFromRightEnter;
+  animation-name: viewShowFromRightEnter;
+}
+.view-transition-show-panel-right-leave {
+  -webkit-animation-name: viewShowFromRightLeave;
+  animation-name: viewShowFromRightLeave;
+}
+.view-transition-reveal-panel-right-enter {
+  -webkit-animation-name: viewRevealFromRightEnter;
+  animation-name: viewRevealFromRightEnter;
+}
+.view-transition-reveal-panel-right-leave {
+  -webkit-animation-name: viewRevealFromRightLeave;
+  animation-name: viewRevealFromRightLeave;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -13623,7 +13661,7 @@ button.close {
   background: white;
 }
 .e-side_bar .view {
-  position: static;
+  position: absolute;
 }
 .e-side_bar.m-side-left {
   left: 0;
@@ -13652,34 +13690,4 @@ button.close {
   top: 10px;
   left: 10px;
   background-color: #fd4482;
-}
-.view-transition-show-panel-right-enter,
-.view-transition-show-panel-right-leave {
-  -webkit-animation-duration: 500ms;
-  animation-duration: 500ms;
-  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
-  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
-}
-.view-transition-reveal-panel-right-enter,
-.view-transition-reveal-panel-right-leave {
-  -webkit-animation-duration: 500ms;
-  animation-duration: 500ms;
-  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
-  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
-}
-.view-transition-show-panel-right-enter {
-  -webkit-animation-name: viewShowFromRightEnter;
-  animation-name: viewShowFromRightEnter;
-}
-.view-transition-show-panel-right-leave {
-  -webkit-animation-name: viewShowFromRightLeave;
-  animation-name: viewShowFromRightLeave;
-}
-.view-transition-reveal-panel-right-enter {
-  -webkit-animation-name: viewRevealFromRightEnter;
-  animation-name: viewRevealFromRightEnter;
-}
-.view-transition-reveal-panel-right-leave {
-  -webkit-animation-name: viewRevealFromRightLeave;
-  animation-name: viewRevealFromRightLeave;
 }

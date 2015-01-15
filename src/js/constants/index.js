@@ -6,5 +6,8 @@ module.exports = {
 	subviews 			: require('./subviews'),
 	formatSerialize 	: require('./formatSerialize'),
 	modeView 			: require('./modeView'),
-	modeApp 			: require('./modeApp')
+	modeApp 			: require('./modeApp'),
+	modeTableView 		: require('./modeTableView'),
+	fieldTypes 			: require('./fieldTypes'),
+	floatPanel 			: require('./floatPanel')
 }

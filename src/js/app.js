@@ -6,7 +6,6 @@ var React = require('react/addons');
 
 var classnames  = require('classnames');
 var Touchstone  = require('touchstonejs');
-var Navigation 	= require('./mixins/Navigation');
 var AppContextTypes  = require('./mixins/AppContextTypes');
 
 var config 		= require('./config');
@@ -15,24 +14,20 @@ var utils 		= require('./utils');
 var Services 	= require('./services');
 var Helpers 	= require('./helpers');
 
-var views 		= require('./ui/editor/Pages');
+var views 		= require('./ui/editor/layout');
+var UI   		= require('_ui');
 
 require('./globalReferences');
 
 var App = React.createClass({
-	mixins : [ Navigation, AppContextTypes.parentContext ],
-
-	views: function () {
-		return views;
-	}, 
+	mixins : [ AppContextTypes.parentContext ],
 
 	getInitialState : function () {
-		return  _.defaults( {
+		return  {
 			currentView : 'Workspace',
 			online 		: true,
-			mode 		: config.mode,
 			isNativeApp : utils.common.isCordova()
-		}, this.getInitialStateNavigation() )
+		}
 	},
 
 	getChildContext: function() {
@@ -43,16 +38,14 @@ var App = React.createClass({
 
 	render : function () {
 		var appWrapperClassName = classnames({
-			'app-wrapper': true,
-			'is-native-app': this.state.isNativeApp
+			'app-wrapper' 	: true,
+			'is-native-app' : this.state.isNativeApp
 		});
-
-		var navigation = this.jsxNavigation();
 
 		return (
 			<div className={appWrapperClassName}>
 				<div className="device-silhouette">
-					<div className="view-wrapper">{navigation}</div>
+					<UI.Navigation views={views} currentView={this.state.currentView} />
 				</div>
 			</div>)
 	}

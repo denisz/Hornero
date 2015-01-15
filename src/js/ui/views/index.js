@@ -4,5 +4,6 @@ module.exports = {
 	Spinner 	: require('./Spinner'),
 	Row 		: require('./Row'),
 	Col			: require('./Col'),
-	Container 	: require('./Container')
+	Container 	: require('./Container'),
+	Grid 		: require('./Grid')	
 }
