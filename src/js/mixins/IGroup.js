@@ -1,7 +1,6 @@
 var _ 	  			= require('underscore')	
 var React 			= require('react/addons');
 var ReactBackbone 	= require('react.backbone');
-var UI 				= require('touchstonejs').UI;
 var Creater 		= require('../helpers/Creater');
 
 module.exports =  {

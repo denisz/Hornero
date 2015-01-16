@@ -93,7 +93,11 @@ module.exports = React.createBackboneClass({
 	render : function () {
 		this.syncCollection();
 
-		return (<Group collection={this.state.collection} createChildComponent={this.createChildComponent} componentClass={BS.Row} />)
+		return (
+			<BS.Grid fluid>
+				<Group collection={this.state.collection} createChildComponent={this.createChildComponent} componentClass={BS.Row} />
+			</BS.Grid>
+		)
 	}
 
 })

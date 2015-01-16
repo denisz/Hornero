@@ -30,6 +30,7 @@ module.exports = React.createClass({
 
 	getInitialState : function () {
 		return  _.defaults( {
+			key 			: _.uniqueId('nav_'),
 			currentView 	: this.props.currentView,
 			viewProps 		: this.props.viewProps,
 			viewTransition  : this.getViewTransition(this.props.viewTransition)
@@ -118,7 +119,7 @@ module.exports = React.createClass({
 		});
 
 		var nextState = {
-			key 			: _.uniqueId('navigation_'),
+			key 			: _.uniqueId('nav_'),
 			currentView 	: nextProps.currentView,
 			viewProps 		: nextProps.viewProps,
 			viewTransition  : this.getViewTransition(nextProps.viewTransition)	

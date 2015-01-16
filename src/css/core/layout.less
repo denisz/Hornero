@@ -3,3 +3,19 @@
 	background-color: black; // exaggerate opacity changes on views
 	overflow 		: hidden;
 }
+
+#app,
+html,
+body {
+	.square(100%);
+	background: @body-bg;
+	// overflow: hidden;
+	position: fixed;
+}
+
+// make it play nice with mobile
+.app-wrapper {
+	background-color: black; // exaggerate opacity changes on views
+	overflow 		: hidden;
+	position 		: fixed; // the fill-space mixin positions absolutely by default
+}

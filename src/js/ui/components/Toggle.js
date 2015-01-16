@@ -36,7 +36,6 @@ module.exports = React.createClass({
 				'Toggle-item': true,
 				'active': op.value === this.props.value
 			});
-
 			return (
 				<Tappable key={'option-' + op.value} onTap={this.onChange.bind(this, op.value)} className={itemClassName}>
 					{op.icon}{op.label}

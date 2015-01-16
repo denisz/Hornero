@@ -44,7 +44,7 @@ var App = React.createClass({
 
 		return (
 			<div className={appWrapperClassName}>
-				<div className="device-silhouette">
+				<div className="app-wrapper">
 					<UI.Navigation views={views} currentView={this.state.currentView} />
 				</div>
 			</div>)

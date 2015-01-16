@@ -22,60 +22,18 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
 						}
 					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-		},
-		{
-			displayName : 'Row',
-		},
-		{
-			displayName : 'Row',
-			subviews : [
+				},
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Row',
-					subviews : [	
-						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -85,15 +43,42 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
+						}
+					]
+				}
+			],
+		},
+		{
+			displayName : 'Row',
+		},
+		{
+			displayName : 'Row',
+			subviews : [
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -103,15 +88,18 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -121,15 +109,18 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -139,15 +130,18 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -157,15 +151,18 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
@@ -175,56 +172,22 @@ module.exports = {
 			displayName : 'Row',
 			subviews : [
 				{
-					displayName : 'Row',
+					displayName : 'Col',
 					subviews : [	
 						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
+							displayName : 'Empty'
+						}
+					]
+				},
+				{
+					displayName : 'Col',
+					subviews : [	
+						{
+							displayName : 'Empty'
 						}
 					]
 				}
 			],
 		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Row',
-					subviews : [	
-						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Row',
-					subviews : [	
-						{
-							displayName : 'Col',
-							subviews : [	
-								{
-									displayName : 'Empty'
-								}	
-							]
-						}
-					]
-				}
-			],
-		}
-
 	]
 }

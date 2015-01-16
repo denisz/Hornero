@@ -1,4 +1,5 @@
 module.exports = {
 	Store 			: require('./Store'),
-	AppDispatcher 	: require('./AppDispatcher')
+	AppDispatcher 	: require('./AppDispatcher'),
+	Device 			: require('./Device')
 }

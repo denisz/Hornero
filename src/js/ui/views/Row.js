@@ -1,8 +1,7 @@
 /** @jsx React.DOM */
 
 var Creater 	= require('../../helpers/Creater');
-var UI 		 	= require('touchstonejs').UI;
-var HUD 	 	= require('../components');
+var UI 		 	= require('_ui');
 var React 		= require('react/addons');
 var BS 			= require('react-bootstrap');
 
@@ -20,12 +19,14 @@ module.exports = Creater.createView({
 			model = this.getModel();
 		
 		return (<UI.FlexBlock>
-					<HUD.Styles model={model.getStyles()}>
-						<Group collection={model.getSubviews()} componentClass={BS.Row}/>
-					</HUD.Styles>
-					<HUD.BuildHelper mode={this.state.mode}>
-						<HUD.ActionButton onTap={this.handleClick}>Add content</HUD.ActionButton>
-					</HUD.BuildHelper>
+					<UI.Styles model={model.getStyles()}>
+						<BS.Grid fluid>
+							<Group collection={model.getSubviews()} componentClass={BS.Row}/>
+						</BS.Grid>
+					</UI.Styles>
+					<UI.BuildHelper mode={this.state.mode}>
+						<UI.ActionButton onTap={this.handleClick}>Add content</UI.ActionButton>
+					</UI.BuildHelper>
 				</UI.FlexBlock>)
 	}
 });

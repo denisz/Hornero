@@ -9,5 +9,7 @@ module.exports = {
 	modeApp 			: require('./modeApp'),
 	modeTableView 		: require('./modeTableView'),
 	fieldTypes 			: require('./fieldTypes'),
-	floatPanel 			: require('./floatPanel')
+	floatPanel 			: require('./floatPanel'),
+	viewports 			: require('./viewports'),
+	devices 			: require('./devices')
 }

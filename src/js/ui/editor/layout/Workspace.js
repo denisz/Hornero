@@ -21,6 +21,7 @@ module.exports =  React.createClass({
 	render : function () {
 		return (
 			<UI.FlexLayout className={this.props.viewClassName}>
+				<Composition.Device />
 				<Composition.Canvas />
 				<Composition.FloatPanel />
 				<Composition.ButtonAppMenu />					

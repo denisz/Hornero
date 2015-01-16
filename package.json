@@ -33,7 +33,9 @@
     "lorem-ipsum"       : "^1.0.1",
     "ease-component"    : "^1.0.0",
     "react-resizable"   : "^0.2.0",
-    "react-draggable"   : "^0.4.0"
+    "react-draggable"   : "^0.4.0",
+    "device.js"         : "^0.1.2",
+    "react-svg"         : "^1.0.0"    
   },
   "devDependencies": {
     "brfs"            : "^1.2.0",

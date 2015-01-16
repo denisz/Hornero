@@ -1,5 +1,6 @@
 module.exports = {
 	FloatPanel 		: require('./FloatPanel'),
 	Canvas 			: require('./Canvas'),
-	ButtonAppMenu  	: require('./ButtonAppMenu')
+	ButtonAppMenu  	: require('./ButtonAppMenu'),
+	Device 			: require('./Device')
 }

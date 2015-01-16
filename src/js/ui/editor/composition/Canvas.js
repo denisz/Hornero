@@ -1,12 +1,19 @@
 /** @jsx React.DOM */
 
-var React 	 = require('react/addons');
-var Store 	 = require('../../../services/Store');
-var Window   = require('../../views/Window');
+var _ = require('underscore');
+var React 	 	= require('react/addons');
+var Store 	 	= require('_store');
+var Window   	= require('../../views/Window');
+var UI 		 	= require('_ui');
+var classnames 	= require('classnames');
 
-var ViewMode = require('../../../constants/ModeView');
-var AppMode  = require('../../../constants/ModeApp');
+//константы
+var ViewMode = require('_constants').modeView;
+var AppMode  = require('_constants').modeApp;
+var Viewports= require('_constants').viewports; 
+var Devices  = require('_constants').devices;
 
+// контексты
 var ViewContextTypes = require('../../../mixins/ViewContextTypes');
 var AppContextTypes  = require('../../../mixins/AppContextTypes');
 
@@ -19,7 +26,16 @@ module.exports = React.createClass({
 
 	getDefaultProps : function () {
 		return {
-			model : window.HelperModel.createInstance({ displayName : 'Window' })
+			viewport    	: Viewports.PHONE, //Viewports.DESKTOP,
+			device 			: Devices.IPHONE5, //Devices.MAC,
+			model 			: window.HelperModel.createInstance({ displayName : 'Window' })
+		}
+	},
+
+	getInitialState : function () {
+		return {
+			viewport 	: this.props.viewport,
+			device 		: this.props.device
 		}
 	},
 
@@ -38,7 +54,22 @@ module.exports = React.createClass({
 		Store.unregisterModel( this.props.model );
 	},
 
+	componentWillReceiveProps : function (nextProps) {
+		this.setState({
+			viewport 	: nextProps.viewport,
+			device 		: nextProps.device
+		})
+	},
+
 	render : function () {
-		return (<Window model={this.props.model}></Window>)
+		var className = classnames("canvas-wrapper", _.object([
+				[('m-' + this.state.viewport).toLowerCase(), 	device.desktop()],
+				[('m-' + this.state.device).toLowerCase(),		device.desktop()]
+			]));
+
+		return (
+			<UI.FlexBlock scrollable className={className}>
+				<Window model={this.props.model}></Window>
+			</UI.FlexBlock>)
 	}
 })

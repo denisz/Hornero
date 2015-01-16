@@ -35,8 +35,10 @@ module.exports = {
 		isParentable 	: true
 	},
 	Col : {
-		xs : 6,
-		md : 6,
+		xs : 12, //телефоны
+		sm : 6, //планшеты
+		md : 6, //средние экрна
+		lg : 3,//большие экраны
 		isParentable 	: true
 	}
 }

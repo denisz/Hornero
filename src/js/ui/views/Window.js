@@ -28,7 +28,7 @@ module.exports = Creater.createView({
 			model = this.getModel(),
 			attrs = this.getAttributes();
 
-		return (<UI.FlexBlock scrollable>
+		return (<div>
 					<HUD.Styles model={model.getStyles()}>
 						<div>{props.get('text')}</div>
 						<Group collection={model.getSubviews()} />
@@ -37,6 +37,6 @@ module.exports = Creater.createView({
 						<HUD.ActionButton onTap={this.handleClickShowSettings}>Show settings</HUD.ActionButton>
 						<HUD.ActionButton onTap={this.handleClickShowLibrary}>Show library</HUD.ActionButton>
 					</HUD.BuildHelper>
-				</UI.FlexBlock>)
+				</div>)
 	}
 });
