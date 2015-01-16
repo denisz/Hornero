@@ -1,0 +1,19 @@
+
+/**
+	example : 
+	.loop(@counter) when (@counter > 0) {
+	  .loop((@counter - 1));    // next iteration
+	  width: (10px * @counter); // code for each iteration
+	}
+
+	.grid-viewport(12, 'col-md-')
+
+	percentage() (@columns / @grid-columns)
+*/
+.grid-viewport-col (@columns; @prefix; @counter ) when (@counter > 0) {
+	.grid-viewport-col (@columns; @prefix; (@counter - 1));
+
+	.@{prefix}@{counter} {
+    	width: percentage( ( @counter / @columns ) );
+    }
+}

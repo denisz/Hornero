@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="351px" height="689px" viewBox="0 0 351 689" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9977) - http://www.bohemiancoding.com/sketch -->
+    <title>Light</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="345.798165" y="59.2801418" width="3.20183486" height="42.2269504"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-4" x="0" y="116.124113" width="3.20183486" height="71.988354"></rect>
+        <linearGradient x1="22.2727924%" y1="-14.1091349%" x2="90.6586119%" y2="98.153535%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0.765194164" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
+            <feMorphology radius="3" in="SourceAlpha" operator="dilate" result="shadowSpreadInner1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadInner1" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner2" result="shadowBlurInner2"></feGaussianBlur>
+            <feComposite in="shadowBlurInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" in="shadowInnerInner2" type="matrix" result="shadowMatrixInner2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-7" x="2.40137615" y="0" width="344.197248" height="687" rx="40"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#AEAEAE" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.462972%" y1="8.24991862%" x2="77.5756836%" y2="92.3299154%" id="linearGradient-9">
+            <stop stop-color="#58B5FF" offset="0%"></stop>
+            <stop stop-color="#215680" stop-opacity="0.478656314" offset="37.1887628%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.133042279" offset="50.6037215%"></stop>
+            <stop stop-color="#04226B" stop-opacity="0.797229259" offset="76.3302442%"></stop>
+            <stop stop-color="#1063C5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#ADADAD" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.084 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-12" x="175.300459" y="29.2340426" width="27.2155963" height="3.24822695" rx="40"></rect>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="99.2546102%" id="linearGradient-13">
+            <stop stop-color="#FFFFFF" stop-opacity="0.06" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Nixus-Phones" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Light" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+            <g id="Stuff">
+                <g id="Power-Switch" filter="url(#filter-1)">
+                    <use stroke="none" fill="#F8F8F8" fill-rule="evenodd" sketch:type="MSShapeGroup" xlink:href="#path-2"></use>
+                    <use stroke-opacity="0.1" stroke="#000000" stroke-width="1" fill="none" xlink:href="#path-2"></use>
+                </g>
+                <g id="Rocker-Switch" filter="url(#filter-3)">
+                    <use stroke="none" fill="#F8F8F8" fill-rule="evenodd" sketch:type="MSShapeGroup" xlink:href="#path-4"></use>
+                    <use stroke-opacity="0.1" stroke="#000000" stroke-width="1" fill="none" xlink:href="#path-4"></use>
+                </g>
+                <g id="Nixus-Phone-Body" filter="url(#filter-6)">
+                    <use stroke="none" fill="#F8F8F8" sketch:type="MSShapeGroup" xlink:href="#path-7"></use>
+                    <use stroke-opacity="0.101534194" stroke="#000000" stroke-width="1" fill="url(#linearGradient-5)" xlink:href="#path-7"></use>
+                </g>
+                <path d="M163.293578,35.7304965 C165.946065,35.7304965 168.09633,33.5490755 168.09633,30.858156 C168.09633,28.1672366 165.946065,25.9858156 163.293578,25.9858156 C160.641091,25.9858156 158.490826,28.1672366 158.490826,30.858156 C158.490826,33.5490755 160.641091,35.7304965 163.293578,35.7304965 Z" id="Camera-Inlay" fill="url(#linearGradient-8)" sketch:type="MSShapeGroup"></path>
+                <path d="M163.293578,34.106383 C165.061903,34.106383 166.495413,32.6521023 166.495413,30.858156 C166.495413,29.0642097 165.061903,27.6099291 163.293578,27.6099291 C161.525253,27.6099291 160.091743,29.0642097 160.091743,30.858156 C160.091743,32.6521023 161.525253,34.106383 163.293578,34.106383 Z" id="Camera-Boarder" fill="#0E0E0E" sketch:type="MSShapeGroup"></path>
+                <path d="M163.293578,33.2943262 C164.619821,33.2943262 165.694954,32.2036158 165.694954,30.858156 C165.694954,29.5126963 164.619821,28.4219858 163.293578,28.4219858 C161.967334,28.4219858 160.892202,29.5126963 160.892202,30.858156 C160.892202,32.2036158 161.967334,33.2943262 163.293578,33.2943262 Z" id="Camera-Lens" stroke-opacity="0.0301011029" stroke="#FFFFFF" fill="url(#linearGradient-9)" sketch:type="MSShapeGroup"></path>
+                <rect id="Specker-Inlay" fill="url(#linearGradient-10)" sketch:type="MSShapeGroup" x="172.899083" y="26.7978723" width="32.0183486" height="8.12056738" rx="40"></rect>
+                <rect id="Speaker-Boarder" fill="#383838" sketch:type="MSShapeGroup" x="174.5" y="28.4219858" width="28.8165138" height="4.87234043" rx="40"></rect>
+                <g id="Speaker-Grill" filter="url(#filter-11)">
+                    <use fill="#4D4D4D" sketch:type="MSShapeGroup" xlink:href="#path-12"></use>
+                    <use fill="none" xlink:href="#path-12"></use>
+                </g>
+                <ellipse id="Sensor" fill-opacity="0.399988511" fill="#000000" sketch:type="MSShapeGroup" cx="150.486239" cy="30.0460993" rx="0.800458716" ry="0.812056738"></ellipse>
+                <rect id="Screen-Boarder-Boarder" fill="url(#linearGradient-13)" sketch:type="MSShapeGroup" x="12.0068807" y="56.8439716" width="324.986239" height="573.312057" rx="4"></rect>
+                <rect id="Screen-Boarder" fill="#000000" sketch:type="MSShapeGroup" x="12.8073394" y="57.6560284" width="323.385321" height="571.687943" rx="3"></rect>
+            </g>
+            <rect id="-SCREEN-HERE-" stroke-opacity="0.2421875" stroke="#FFFFFF" fill="#FFFFFF" sketch:type="MSShapeGroup" x="14.4082569" y="59.2801418" width="320.183486" height="568.439716"></rect>
+        </g>
+    </g>
+</svg>

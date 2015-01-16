@@ -1,0 +1,53 @@
+@grid-columns: 12;
+
+.canvas-wrapper {
+	background: white;
+}
+
+//desktop -md
+.canvas-wrapper.m-desktop {
+	.grid-viewport-col(@grid-columns, col-md-, @grid-columns);
+}
+
+
+//large desktop -ld
+.canvas-wrapper.m-large_desktop {
+	.grid-viewport-col(@grid-columns, col-ld-, @grid-columns);	
+}
+
+
+// tablets -sm
+.canvas-wrapper.m-tablet {
+	.grid-viewport-col(@grid-columns, col-sm-, @grid-columns);
+}
+
+
+.canvas-wrapper.m-tablet.m-ipad {
+	.size(1024,768px);
+}
+
+.canvas-wrapper.m-tablet.m-nexus {
+	.size(1024,768px);
+}
+
+// phones -xs
+.canvas-wrapper.m-phone {
+	.translate(-50%,-50%);
+	box-shadow: 0 0 12px -1px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+	left: 50%;
+	top: 50%;
+	position : fixed;
+
+	.grid-viewport-col(@grid-columns, col-xs-, @grid-columns);
+}
+
+.canvas-wrapper.m-phone.m-iphone4 {
+	.size(320px,480px); // iPhone 4
+}
+
+.canvas-wrapper.m-phone.m-iphone5 {
+	.size(320px,568px); // iPhone 5
+}
+.canvas-wrapper.m-phone.m-iphone6 {
+	.size(376px,668px); // iPhone 6, actually "365,667" but that causes subpixel blur from transforms
+}
