@@ -6270,15 +6270,6 @@ fieldset[disabled] .btn-link {
   background-color: #5856d6;
   color: white;
 }
-.navigation-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  overflow: hidden;
-}
 #app,
 html,
 body {
@@ -6291,6 +6282,20 @@ body {
   background-color: black;
   overflow: hidden;
   position: fixed;
+}
+.navigation-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  overflow: hidden;
+}
+.overlay-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 .view-transition-show-panel-right-enter,
 .view-transition-show-panel-right-leave {
@@ -6321,6 +6326,26 @@ body {
 .view-transition-reveal-panel-right-leave {
   -webkit-animation-name: viewRevealFromRightLeave;
   animation-name: viewRevealFromRightLeave;
+}
+.view-transition-show-overlay-fade-enter {
+  -webkit-animation: fadeInSmoothness 380ms;
+  -o-animation: fadeInSmoothness 380ms;
+  animation: fadeInSmoothness 380ms;
+}
+.view-transition-show-overlay-fade-leave {
+  -webkit-animation: fade 380ms;
+  -o-animation: fade 380ms;
+  animation: fade 380ms;
+}
+@-webkit-keyframes fadeInSmoothness {
+  to {
+    opacity: .5;
+  }
+}
+@keyframes fadeInSmoothness {
+  to {
+    opacity: .5;
+  }
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -13670,28 +13695,31 @@ button.close {
   }
 }
 .e-side_bar {
+  z-index: 1;
+}
+.e-side_bar_content {
   position: absolute;
   z-index: 10;
   background: white;
 }
-.e-side_bar .view {
+.e-side_bar_content .view {
   position: absolute;
 }
-.e-side_bar.m-side-left {
+.e-side_bar_content.m-side-left {
   left: 0;
   top: 0;
   bottom: 0;
 }
-.e-side_bar.m-side-right {
+.e-side_bar_content.m-side-right {
   right: 0;
   top: 0;
   bottom: 0;
 }
-.e-side_bar.m-side-top {
+.e-side_bar_content.m-side-top {
   top: 0;
   height: 300px;
 }
-.e-side_bar.m-side-bottom {
+.e-side_bar_content.m-side-bottom {
   bottom: 0;
   height: 300px;
 }

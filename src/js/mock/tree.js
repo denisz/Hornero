@@ -6,7 +6,7 @@ module.exports = {
 	},
 	subviews 	: [
 		{
-			displayName : 'Empty',
+			displayName : 'Text',
 			text 		: 'Haha',
 			styles 		: {
 				border  		: '1px solid red',
@@ -23,171 +23,26 @@ module.exports = {
 			subviews : [
 				{
 					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
 				},
 				{
 					displayName : 'Col',
+					styles 		: {
+						border  		: '1px solid red',
+						backgroundColor : 'white'
+					},
 					subviews : [	
 						{
-							displayName : 'Empty'
+							displayName : 'Text'
+						},
+						{
+							displayName : 'Picture'
 						}
 					]
 				}
 			],
 		},
 		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
-		{
-			displayName : 'Row',
-			subviews : [
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				},
-				{
-					displayName : 'Col',
-					subviews : [	
-						{
-							displayName : 'Empty'
-						}
-					]
-				}
-			],
-		},
+			displayName : 'Row'			
+		}
 	]
 }

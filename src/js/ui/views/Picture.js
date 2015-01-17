@@ -6,16 +6,10 @@ var React 		= require('react/addons');
 var Group 		= require('./Group');
 
 module.exports = Creater.createView({
-	displayName : 'Empty',
+	displayName : 'Picture',
 
 	handleClick : function () {
 		console.log(12)
-	},
-
-	_getEmpty 	: function () {
-		return (<UI.BuildHelper mode={this.state.mode}>
-					<UI.ActionButton onTap={this.handleClick}>Add content to Empty</UI.ActionButton>
-				</UI.BuildHelper>)
 	},
 
 	render  	: function () {
@@ -24,10 +18,7 @@ module.exports = Creater.createView({
 			attrs = this.getAttributes();
 		
 		return (<UI.Styles model={model.getStyles()} componentClass={UI.FlexBlock}>
-					<div>{props.get('text')}</div>
-					<Group collection={model.getSubviews()}>
-						{this._getEmpty()}
-					</Group>
+					<UI.ImageLoader src={model.get('src')} />
 				</UI.Styles>)
 	}
 });

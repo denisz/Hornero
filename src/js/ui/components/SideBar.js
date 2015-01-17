@@ -1,4 +1,5 @@
 /** @jsx React.DOM */
+
 var React 					= require('react/addons');
 var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
@@ -7,16 +8,24 @@ var classnames 		= require('classnames');
 var Transitions 	= require('../../mixins/Transitions');
 var UI 				= require('touchstonejs').UI;
 
+var Tappable 		= require('react-tappable');
+
 module.exports =  React.createClass({
 	mixins : [Transitions],
+
 	propTypes: {
-		docked 	: React.PropTypes.bool
+		side 			: React.PropTypes.string,
+		width 			: React.PropTypes.number,
+		showTransition 	: React.PropTypes.string,
+		hideTransition 	: React.PropTypes.string,
+		isOpened 		: React.PropTypes.bool,
+		overlay 		: React.PropTypes.bool
 	},
 
 	getDefaultProps : function () {
 		return {
 			overlay 		: true,
-			side 			: 'right',
+			side 			: 'right', //right|bottom|left|top
 			width   		: 300,
 			isOpened  		: true ,
 			showTransition  : 'show-panel-right',
@@ -34,44 +43,74 @@ module.exports =  React.createClass({
 		'reveal-from-top',
 		'reveal-from-bottom'
 	*/
-
 	getInitialState : function () {
 		return {
-			showTransition 	: this.getViewTransition(this.props.showTransition),
-			hideTransition 	: this.getViewTransition(this.props.hideTransition),
+			isOpened 			: this.props.isOpened,
+			showTransition 		: this.getViewTransition(this.props.showTransition),
+			hideTransition 		: this.getViewTransition(this.props.hideTransition),
+			overlayTransition 	: this.getViewTransition('show-overlay-fade'),
+
 		}
 	},
 
+	componentWillReceiveProps : function (nextProps) { 
+		this.setState({
+			isOpened 		: nextProps.isOpened
+		})
+	},
+
 	toggle: function() {
-    	this.setProps({ isOpened: !this.props.isOpened });
+    	this.setState({ isOpened: !this.state.isOpened });
   	},
 
   	close: function() {
-    	this.setProps({ isOpened: false });
+    	this.setState({ isOpened: false });    	
   	},
 
   	open: function() {
-    	this.setProps({ isOpened: true });
+    	this.setState({ isOpened: true });
   	},
 
-	render 			: function () {
-		var className = classnames('e-side_bar', 'm-side-' + this.props.side, {
-			'm-opened' : this.props.isOpened
-		});
+  	_wrapChild : function () {
+  		if (this.state.isOpened) {
 
-		var styles = ReactStyle({
-			width : this.props.width
-		});
+  			var className 	= classnames('e-side_bar_content', 'm-side-' + this.props.side, {
+					'm-opened' : this.state.isOpened
+				});
 
-		var viewTransition = this.props.isOpened ? this.state.showTransition : this.state.hideTransition;
-		var children = this.props.isOpened ? (<div className={className} styles={styles}>
-					{this.props.children}
-				</div> ) : null;
+			var styles = ReactStyle({
+				width : this.props.width
+			});
+
+			return (<div className={className} styles={styles}>{this.props.children}</div>)
+  		} 
+
+  		return null;
+  	},
+
+  	_overlay : function () {
+  		if (this.props.overlay && this.state.isOpened) {
+  			return <Tappable className="modal-backdrop in overlay-wrapper" onTap={this.close}></Tappable>;	
+  		}
+
+  		return null
+  	},
+
+  	render 			: function () {
+		var viewTransition 		= this.state.isOpened ? this.state.showTransition : this.state.hideTransition;
+		var overlayTransition 	= this.state.overlayTransition;
+		var children 			= this._wrapChild();
+		var overlay 			= this._overlay();
 
 		return (
-			<ReactCSSTransitionGroup transitionName={viewTransition.name} transitionEnter={viewTransition.in} transitionLeave={viewTransition.out}>
-				{children}
-			</ReactCSSTransitionGroup>
+			<span className="e-side_bar">
+				<ReactCSSTransitionGroup transitionName={overlayTransition.name} transitionEnter={overlayTransition.in} transitionLeave={overlayTransition.out}>
+					{overlay}
+				</ReactCSSTransitionGroup>
+				<ReactCSSTransitionGroup transitionName={viewTransition.name} transitionEnter={viewTransition.in} transitionLeave={viewTransition.out}>
+					{children}
+				</ReactCSSTransitionGroup>
+			</span>
 		)
 	}
 })

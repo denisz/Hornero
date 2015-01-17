@@ -11,7 +11,8 @@ module.exports =  {
 	propTypes: {
 	    collection  	: React.PropTypes.object.isRequired,
 	    componentClass 	: React.PropTypes.any,
-	    createComponent : React.PropTypes.func
+	    createComponent : React.PropTypes.func,
+	    emptyComponent 	: React.PropTypes.element
 	},
 
 	onModelChange : function () {
@@ -44,15 +45,24 @@ module.exports =  {
 	},
 
 	getSubviews 	: function () {
-		return this.state.subviews;
+		var len = this.state.subviews.length;
+
+		if (!len) {
+			return this.props.children;	
+		} 
+
+		return this.state.subviews;		
 	},
 
 	render 			: function () {
-		var subviews = this.getSubviews();
+		var subviews 		= this.getSubviews(),
+			ComponentClass 	= this.props.componentClass,
+    		other 			= _.omit(this.props, 'componentClass', 'collection');
 
-		var ComponentClass 	= this.props.componentClass;
-    	var other 			= _.omit(this.props, 'componentClass', 'collection');
-		
-		return (React.createElement(ComponentClass, other, [subviews, this.props.children]));
+		if (subviews) {
+			return (React.createElement(ComponentClass, other, subviews));
+		}
+
+		return null;
 	}
 }

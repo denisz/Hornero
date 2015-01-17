@@ -1,8 +1,7 @@
 /** @jsx React.DOM */
 
 var Creater 	= require('../../helpers/Creater');
-var UI 		 	= require('touchstonejs').UI;
-var HUD 	 	= require('../components');
+var UI 		 	= require('_ui');
 var React 		= require('react/addons');
 var Group 		= require('./Group');
 
@@ -13,17 +12,22 @@ module.exports = Creater.createView({
 		console.log(12)
 	},
 
+	_getEmpty : function () {
+		return (<UI.BuildHelper mode={this.state.mode}>
+					<UI.ActionButton onTap={this.handleClick}>Add content</UI.ActionButton>
+				</UI.BuildHelper>);
+	},
+
 	render  	: function () {
 		var props = this.getSource(),
 			model = this.getModel();
 		
 		return (<UI.FlexBlock>
-					<HUD.Styles model={model.getStyles()}>
-						<Group collection={model.getSubviews()}/>
-					</HUD.Styles>
-					<HUD.BuildHelper mode={this.state.mode}>
-						<HUD.ActionButton onTap={this.handleClick}>Add content</HUD.ActionButton>
-					</HUD.BuildHelper>
+					<UI.Styles model={model.getStyles()}>
+						<Group collection={model.getSubviews()}>
+							{this._getEmpty()}
+						</Group>
+					</UI.Styles>
 				</UI.FlexBlock>)
 	}
 });

@@ -17,14 +17,21 @@ module.exports = {
 		isImmutable 	: false
 	},
 	Empty : {
-		text 			: loremIpsum({ count: 50 , units: 'words' }),
 		isParentable 	: true,
 		isImmutable 	: false
+	},
+	Text 	: {
+		text 			: loremIpsum({ count: 50 , units: 'words' }),
+		isParentable 	: false,
+		isImmutable 	: false	
 	},
 	Label : {
 		text 			: loremIpsum(),
 		isParentable 	: false,
 		isImmutable 	: false	
+	},
+	Picture : {
+		src : 'https://pbs.twimg.com/profile_images/530346351809163264/yoT4AQ3t_normal.jpeg'
 	},
 	Row : {
 		subviews : [

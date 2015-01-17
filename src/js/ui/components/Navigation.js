@@ -60,7 +60,7 @@ module.exports = React.createClass({
 			return (
 				<UI.FlexLayout className="view">
 					<UI.FlexBlock>
-						<UI.Feedback iconKey="ion-alert-circled" iconType="danger" text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'} actionText="Okay, take me home" />
+						<UI.Feedback actionFn={this.handleFallback} iconKey="ion-alert-circled" iconType="danger" text={'Sorry, the view <strong>"' + this.state.currentView + '"</strong> is not available.'} actionText="Okay" />
 					</UI.FlexBlock>
 				</UI.FlexLayout>
 			);
@@ -75,10 +75,10 @@ module.exports = React.createClass({
 			navigation   : this,
 			viewClassName: this.state[key + '_class'] || 'view'
 		}))
+	},
 
-		// return React.withContext(this.getChildContext(), function () { 
-			
-		// }.bind(this));
+	handleFallback : function () {
+		console.log('not found');
 	},
 	
 	showView: function(key, transition, props, state) {
@@ -111,6 +111,10 @@ module.exports = React.createClass({
 		}
 
 		this.setState(newState);		
+	},
+
+	back : function () {
+
 	},
 
 	componentWillReceiveProps : function (nextProps) {

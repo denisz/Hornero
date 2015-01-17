@@ -10,8 +10,9 @@ var FloatPanel 		= constants.floatPanel;
 var BS 				= require('react-bootstrap');
 
 var views = {};
-views[FloatPanel.SETTINGS] 	= require('../bricks/Settings');
-views[FloatPanel.LIBRARY] 	= require('../bricks/Library');
+views[FloatPanel.SETTINGS] 	= require('../sections/Settings');
+views[FloatPanel.LIBRARY] 	= require('../sections/Library');
+views[FloatPanel.STYLES] 	= require('../sections/Styles');
 
 module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 	displayName  	: 'PanelSettings',
@@ -46,21 +47,13 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 		this.stopListeningDispatcher()
 	},
 
-	handleOpened : function () {
-		console.log('opened');
-	},
-
-	handleClosed : function () {
-		console.log('closed');
-	},
-
 	show : function (payload) {
 		var data = HelperPayload.getData(payload);
 
 		this.setState({ 
-			currentView : data.panelName, 
-			viewProps 	: data.props, 
-			opened 		: true ,
+			currentView 	: data.panelName, 
+			viewProps 		: data.props, 
+			opened 			: true ,
 			viewTransition 	: 'show-from-right'
 		})
 	},
@@ -73,7 +66,7 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
 
 		return (
-				<UI.SideBar side={this.props.side} isOpened={this.state.opened} onOpened={this.handleOpened} onClosed={this.handleClosed}>
+				<UI.SideBar side={this.props.side} isOpened={this.state.opened}>
 					<UI.Navigation {...navigationOpts}></UI.Navigation>
 				</UI.SideBar>
 			)

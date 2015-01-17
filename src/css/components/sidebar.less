@@ -1,34 +1,38 @@
 .e-side_bar {
+	z-index : 1;
+}
+
+.e-side_bar_content {
 	position 	: absolute;
 	z-index 	: 10;
 	background 	: white;
 }
 
-.e-side_bar .view {
+.e-side_bar_content .view {
 	position 	: absolute;
 	// min-height  : 100%;
 }
 
-.e-side_bar.m-opened {}
+.e-side_bar_content.m-opened {}
 
-.e-side_bar.m-side-left {
+.e-side_bar_content.m-side-left {
 	left 		: 0;
 	top  		: 0;
 	bottom 		: 0;
 }
 
-.e-side_bar.m-side-right {
+.e-side_bar_content.m-side-right {
 	right 		: 0;
 	top  		: 0;
 	bottom 		: 0;
 }
 
-.e-side_bar.m-side-top {
+.e-side_bar_content.m-side-top {
 	top  	: 0;
 	height 	: 300px;
 }
 
-.e-side_bar.m-side-bottom {
+.e-side_bar_content.m-side-bottom {
 	bottom : 0;
 	height : 300px;
 }

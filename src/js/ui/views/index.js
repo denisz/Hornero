@@ -5,5 +5,7 @@ module.exports = {
 	Row 		: require('./Row'),
 	Col			: require('./Col'),
 	Container 	: require('./Container'),
-	Grid 		: require('./Grid')	
+	Grid 		: require('./Grid'),
+	Text 		: require('./Text'),
+	Picture 	: require('./Picture')
 }

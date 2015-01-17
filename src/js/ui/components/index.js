@@ -10,5 +10,7 @@ module.exports = {
 	ActionButton	: require('./ActionButton'),
 	BuildHelper 	: require('./BuildHelper'),
 	TableView 		: require('./TableView'),
-	Toggle 			: require('./Toggle')
+	Toggle 			: require('./Toggle'),
+	ImageLoader  	: require('./ImageLoader'),
+	NavigationAction: require('./NavigationAction')
 }

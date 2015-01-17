@@ -63,25 +63,26 @@ module.exports = React.createClass({
 							{ label: '', value: ModeTableView.TABLE, icon : <BS.Glyphicon glyph="th-large" /> }
 						]} />
 					</UI.Headerbar>	
+					
 					<UI.FlexBlock scrollable>
 						
 						<UI.TableView sort={'displayName'} mode={this.state.mode} collection={this.state.collection} factoryItem={this.factoryItem} filter={this.props.filter}></UI.TableView>
 						
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.ActionButton>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.NavigationAction>
 
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.ActionButton>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.NavigationAction>
 
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="fade">Fade</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="fade-contract">Fade contract</UI.ActionButton>
-						<UI.ActionButton showView={FloatPanel.SETTINGS} viewTransition="fade-expand">Fade Expand</UI.ActionButton>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade">Fade</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade-contract">Fade contract</UI.NavigationAction>
+						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade-expand">Fade Expand</UI.NavigationAction>
 
-						<UI.ActionButton onTap={Actions.hideFloatPanel}>Close</UI.ActionButton>
+						<UI.NavigationAction onTap={Actions.hideFloatPanel}>Close</UI.NavigationAction>
 
 					</UI.FlexBlock>
 				</UI.FlexLayout>

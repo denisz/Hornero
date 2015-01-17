@@ -7,7 +7,7 @@ var Mockup 		= require('../mockup/');
 module.exports = React.createClass({
 	getDefaultProps : function () {
 		return {
-			device : Devices.IPHONE5,
+			device : Devices.MAC,
 			color  : 'white'
 		}
 	},
@@ -22,6 +22,11 @@ module.exports = React.createClass({
 	render : function () {
 		//написать нормально
 		var ComponentClass = Mockup[this.state.device.toLowerCase()];
-		return (<ComponentClass />)
+
+		if (ComponentClass) {
+			return (<ComponentClass />);	
+		}
+
+		return null;	
 	}
 })

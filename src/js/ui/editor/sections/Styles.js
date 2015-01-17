@@ -1,7 +1,6 @@
 /** @jsx React.DOM */
 var React 	= require('react/addons');
-var UI 		= require('touchstonejs').UI;
-var Link 	= require('touchstonejs').Link;
+var UI 		= require('_ui');
 
 module.exports = React.createClass({
 	getInitialState: function() {

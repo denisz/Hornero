@@ -13,5 +13,7 @@ module.exports = [
 	'reveal-from-bottom',
 
 	'show-panel-right',
-	'reveal-panel-right'
+	'reveal-panel-right',
+
+	'show-overlay-fade'
 ];
