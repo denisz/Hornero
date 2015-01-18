@@ -19,8 +19,14 @@ module.exports = React.createClass({
 		}
 	},
 
+	componentWillReceiveProps : function (nextProps) {
+		this.setState({
+			device 		: nextProps.device,
+			color 		: nextProps.color
+		})
+	},
+
 	render : function () {
-		//написать нормально
 		var ComponentClass = Mockup[this.state.device.toLowerCase()];
 
 		if (ComponentClass) {

@@ -29,7 +29,6 @@ module.exports = Creater.createView({
 
 		return (<div>
 					<UI.Styles model={model.getStyles()}>
-						<div>{props.get('text')}</div>
 						<Group collection={model.getSubviews()} />
 					</UI.Styles>
 					<UI.BuildHelper mode={this.state.mode}>

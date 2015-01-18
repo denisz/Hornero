@@ -16,6 +16,7 @@ module.exports =  React.createClass({
 	propTypes: {
 		side 			: React.PropTypes.string,
 		width 			: React.PropTypes.number,
+		height 			: React.PropTypes.number,
 		showTransition 	: React.PropTypes.string,
 		hideTransition 	: React.PropTypes.string,
 		isOpened 		: React.PropTypes.bool,
@@ -26,10 +27,8 @@ module.exports =  React.createClass({
 		return {
 			overlay 		: true,
 			side 			: 'right', //right|bottom|left|top
-			width   		: 300,
-			isOpened  		: true ,
-			showTransition  : 'show-panel-right',
-			hideTransition 	: 'reveal-panel-right'
+			isOpened  		: true,
+			position 		: 'center'
 		}
 	},
 
@@ -46,8 +45,10 @@ module.exports =  React.createClass({
 	getInitialState : function () {
 		return {
 			isOpened 			: this.props.isOpened,
-			showTransition 		: this.getViewTransition(this.props.showTransition),
-			hideTransition 		: this.getViewTransition(this.props.hideTransition),
+
+			showTransition 		: this.getViewTransition('show-panel-' 	 + this.props.side),
+			hideTransition 		: this.getViewTransition('reveal-panel-' + this.props.side),
+
 			overlayTransition 	: this.getViewTransition('show-overlay-fade'),
 
 		}
@@ -74,12 +75,13 @@ module.exports =  React.createClass({
   	_wrapChild : function () {
   		if (this.state.isOpened) {
 
-  			var className 	= classnames('e-side_bar_content', 'm-side-' + this.props.side, {
+  			var className 	= classnames('e-side_bar_content', 'm-position-' + this.props.position, 'm-side-' + this.props.side, {
 					'm-opened' : this.state.isOpened
 				});
 
 			var styles = ReactStyle({
-				width : this.props.width
+				width : this.props.width,
+				height: this.props.height
 			});
 
 			return (<div className={className} styles={styles}>{this.props.children}</div>)

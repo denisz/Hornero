@@ -54,7 +54,7 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 			currentView 	: data.panelName, 
 			viewProps 		: data.props, 
 			opened 			: true ,
-			viewTransition 	: 'show-from-right'
+			viewTransition 	: 'show-from-right'//вот это играет только когда панель уже открыта иначе анимации не будет
 		})
 	},
 
@@ -66,7 +66,7 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
 
 		return (
-				<UI.SideBar side={this.props.side} isOpened={this.state.opened}>
+				<UI.SideBar side={this.props.side} isOpened={this.state.opened} side={this.props.side} width={300}>
 					<UI.Navigation {...navigationOpts}></UI.Navigation>
 				</UI.SideBar>
 			)

@@ -17,6 +17,26 @@
 .view-transition-reveal-panel-right-enter    { .animation-name( viewRevealFromRightEnter ); }
 .view-transition-reveal-panel-right-leave    { .animation-name( viewRevealFromRightLeave ); }
 
+//show panel top
+.view-transition-show-panel-top-enter,
+.view-transition-show-panel-top-leave {
+	.animation-duration( 500ms );
+	.animation-timing-function( cubic-bezier(.36,.26,.11,.88) );
+}
+
+.view-transition-reveal-panel-top-enter,
+.view-transition-reveal-panel-top-leave {
+	.animation-duration( 500ms );
+	.animation-timing-function( cubic-bezier(.36,.26,.11,.88) );
+}
+
+.view-transition-show-panel-top-enter { .animation-name( viewShowFromTopEnter ); }
+.view-transition-show-panel-top-leave { .animation-name( viewShowFromTopLeave ); }
+
+.view-transition-reveal-panel-top-enter    { .animation-name( viewRevealFromTopEnter ); }
+.view-transition-reveal-panel-top-leave    { .animation-name( viewRevealFromTopLeave ); }
+
+
 
 // show overlay
 .view-transition-show-overlay-fade-enter { .animation( fadeInSmoothness 380ms ); }

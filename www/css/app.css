@@ -6327,6 +6327,36 @@ body {
   -webkit-animation-name: viewRevealFromRightLeave;
   animation-name: viewRevealFromRightLeave;
 }
+.view-transition-show-panel-top-enter,
+.view-transition-show-panel-top-leave {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+}
+.view-transition-reveal-panel-top-enter,
+.view-transition-reveal-panel-top-leave {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+  animation-timing-function: cubic-bezier(0.36, 0.26, 0.11, 0.88);
+}
+.view-transition-show-panel-top-enter {
+  -webkit-animation-name: viewShowFromTopEnter;
+  animation-name: viewShowFromTopEnter;
+}
+.view-transition-show-panel-top-leave {
+  -webkit-animation-name: viewShowFromTopLeave;
+  animation-name: viewShowFromTopLeave;
+}
+.view-transition-reveal-panel-top-enter {
+  -webkit-animation-name: viewRevealFromTopEnter;
+  animation-name: viewRevealFromTopEnter;
+}
+.view-transition-reveal-panel-top-leave {
+  -webkit-animation-name: viewRevealFromTopLeave;
+  animation-name: viewRevealFromTopLeave;
+}
 .view-transition-show-overlay-fade-enter {
   -webkit-animation: fadeInSmoothness 380ms;
   -o-animation: fadeInSmoothness 380ms;
@@ -13704,6 +13734,7 @@ button.close {
 }
 .e-side_bar_content .view {
   position: absolute;
+  background-color: white;
 }
 .e-side_bar_content.m-side-left {
   left: 0;
@@ -13717,11 +13748,14 @@ button.close {
 }
 .e-side_bar_content.m-side-top {
   top: 0;
-  height: 300px;
+  left: 0;
+  right: 0;
+}
+.e-side_bar_content.m-center {
+  margin: 0 auto;
 }
 .e-side_bar_content.m-side-bottom {
   bottom: 0;
-  height: 300px;
 }
 .e-button_app_menu {
   position: absolute;

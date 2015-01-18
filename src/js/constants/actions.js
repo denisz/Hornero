@@ -23,6 +23,9 @@ module.exports = keyMirror({
 
 	EDITOR_SHOW_FLOAT_PANEL : null,
 	EDITOR_HIDE_FLOAT_PANEL : null,
+	EDITOR_SHOW_DIALOG 		: null,
+	EDITOR_SHOW_MODAL_DIALOG: null,
+	EDITOR_HIDE_DIALOG : null
 	// API
 
 

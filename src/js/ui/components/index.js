@@ -12,5 +12,7 @@ module.exports = {
 	TableView 		: require('./TableView'),
 	Toggle 			: require('./Toggle'),
 	ImageLoader  	: require('./ImageLoader'),
-	NavigationAction: require('./NavigationAction')
+	NavigationAction: require('./NavigationAction'),
+	MarkdownEditor 	: require('./MarkdownEditor'),
+	Markdown 		: require('./Markdown')
 }

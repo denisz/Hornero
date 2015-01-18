@@ -11,5 +11,6 @@ module.exports = {
 	fieldTypes 			: require('./fieldTypes'),
 	floatPanel 			: require('./floatPanel'),
 	viewports 			: require('./viewports'),
-	devices 			: require('./devices')
+	devices 			: require('./devices'),
+	dialogs 			: require('./dialogs')
 }

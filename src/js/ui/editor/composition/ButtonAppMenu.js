@@ -9,7 +9,7 @@ module.exports = React.createClass({
 	displayName : 'ButtonAppMenu',
 
 	handleClick : function () {
-		Actions.showFloatPanelWith(floatPanel.STYLES);
+		Actions.showDialog();
 	},
 
 	render : function () {

@@ -21,6 +21,34 @@ module.exports = {
 		
 	},
 
+	// показываем дилалог
+	showDialog : function (dialogName, dialogProps) {
+		var props = {
+			action 	: actions.EDITOR_SHOW_DIALOG,
+			source 	: sources.EDITOR,
+			data	: {
+				dialogName 	: dialogName,
+				props 		: dialogProps
+			}
+		};
+		
+		run(props)
+	},
+
+	showModalDialog : function (dialogName, dialogProps) {
+		var props = {
+			action 	: actions.EDITOR_SHOW_MODAL_DIALOG,
+			source 	: sources.EDITOR,
+			data	: {
+				dialogName 	: dialogName,
+				modal 		: true,
+				props 		: dialogProps
+			}
+		};
+		
+		run(props)
+	},
+
 	/**Панель настроек компонентов**/
 	showFloatPanelWith : function (panelName, panelProps) {
 		var props = {

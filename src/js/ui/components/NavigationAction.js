@@ -29,7 +29,7 @@ module.exports = React.createClass({
 			'disabled': this.props.disabled
 		});
 
-		var label = this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
+		var label  = this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
 		var action = this.props.showView ? this.showViewFn(this.props.showView, this.props.viewTransition, this.props.viewProps) : this.props.onTap;
 
 		return (
