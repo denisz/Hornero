@@ -5,7 +5,7 @@
 .e-side_bar_content {
 	position 	: absolute;
 	z-index 	: 10;
-	background 	: white;
+	// background 	: white;
 }
 
 .e-side_bar_content .view {
@@ -34,8 +34,13 @@
 	right 	: 0;
 }
 
-.e-side_bar_content.m-position-center {
+.e-side_bar_content.m-center {
 	margin : 0 auto;
+}
+
+.e-side_bar_content.m-middle .view {
+	.translate3d(0, -50%, 0);
+	top : 50%;
 }
 
 .e-side_bar_content.m-side-bottom {

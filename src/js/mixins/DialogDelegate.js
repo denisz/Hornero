@@ -1,4 +1,7 @@
-module.exports = {
+var DialogContextTypes = require('./DialogContextTypes');
+var _ = require('underscore');
+
+module.exports = _.extend({}, DialogContextTypes.childrenContext, {
 	hideDialog : function () {
 		this.context.dialog.hide.apply(this.context.dialog, arguments);	
 	},
@@ -9,4 +12,4 @@ module.exports = {
 			this.context.dialog.hide.apply(this.context.dialog, args);
 		}.bind(this);
 	},
-}
+})

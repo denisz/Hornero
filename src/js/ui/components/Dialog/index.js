@@ -5,5 +5,8 @@ module.exports = {
 	CloseButton 	: require('./CloseButton'),
 	ActionButton 	: require('./ActionButton'),
 	Panel 			: require('./Panel'),
-	Title 			: require('./Title')
+	Title 			: require('./Title'),
+	HeaderItem 		: require('./HeaderItem'),
+	PanelItem 		: require('./PanelItem'),
+	Content 		: require('./Content')
 }

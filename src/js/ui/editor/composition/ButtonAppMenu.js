@@ -3,18 +3,20 @@
 var React 			= require('react/addons');
 var UI 				= require('_ui');
 var Actions 		= require('_actions').Editor;
-var floatPanel 		= require('_constants').floatPanel;
+var dialogs 		= require('_constants').dialogs;
 
 module.exports = React.createClass({
 	displayName : 'ButtonAppMenu',
 
 	handleClick : function () {
-		Actions.showDialog();
+		Actions.showDialog(dialogs.MARKDOWN_EDITOR);
 	},
 
 	render : function () {
 		return (
-				<UI.NavigationAction className="e-button_app_menu" onTap={this.handleClick}>+</UI.NavigationAction>
+				<UI.NavigationAction className="e-button_app_menu" onTap={this.handleClick}>
+					<UI.Icon icon="paper-airplane" />
+				</UI.NavigationAction>
 			)
 	}
 });

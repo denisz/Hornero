@@ -14,5 +14,8 @@ module.exports = {
 	ImageLoader  	: require('./ImageLoader'),
 	NavigationAction: require('./NavigationAction'),
 	MarkdownEditor 	: require('./MarkdownEditor'),
-	Markdown 		: require('./Markdown')
+	Markdown 		: require('./Markdown'),
+	FlexBlock 		: require('./FlexBlock'),
+	FlexLayout 		: require('./FlexLayout'),
+	Icon 			: require('./Icon')
 }

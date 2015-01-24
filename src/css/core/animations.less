@@ -17,6 +17,25 @@
 .view-transition-reveal-panel-right-enter    { .animation-name( viewRevealFromRightEnter ); }
 .view-transition-reveal-panel-right-leave    { .animation-name( viewRevealFromRightLeave ); }
 
+//show panel left
+.view-transition-show-panel-left-enter,
+.view-transition-show-panel-left-leave {
+	.animation-duration( 500ms );
+	.animation-timing-function( cubic-bezier(.36,.26,.11,.88) );
+}
+
+.view-transition-reveal-panel-left-enter,
+.view-transition-reveal-panel-left-leave {
+	.animation-duration( 500ms );
+	.animation-timing-function( cubic-bezier(.36,.26,.11,.88) );
+}
+
+.view-transition-show-panel-left-enter { .animation-name( viewShowFromLeftEnter ); }
+.view-transition-show-panel-left-leave { .animation-name( viewShowFromLeftLeave ); }
+
+.view-transition-reveal-panel-left-enter    { .animation-name( viewRevealFromLeftEnter ); }
+.view-transition-reveal-panel-left-leave    { .animation-name( viewRevealFromLeftLeave ); }
+
 //show panel top
 .view-transition-show-panel-top-enter,
 .view-transition-show-panel-top-leave {
@@ -35,6 +54,19 @@
 
 .view-transition-reveal-panel-top-enter    { .animation-name( viewRevealFromTopEnter ); }
 .view-transition-reveal-panel-top-leave    { .animation-name( viewRevealFromTopLeave ); }
+
+//show panel bottom
+.view-transition-reveal-panel-bottom-enter,
+.view-transition-reveal-panel-bottom-leave {
+	.animation-duration( 500ms );
+	.animation-timing-function( cubic-bezier(.36,.26,.11,.88) );
+}
+
+.view-transition-show-panel-bottom-enter { .animation-name( viewShowFromBottomEnter ); }
+.view-transition-show-panel-bottom-leave { .animation-name( viewShowFromBottomLeave ); }
+
+.view-transition-reveal-panel-bottom-enter    { .animation-name( viewRevealFromBottomEnter ); }
+.view-transition-reveal-panel-bottom-leave    { .animation-name( viewRevealFromBottomLeave ); }
 
 
 

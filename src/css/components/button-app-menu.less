@@ -1,10 +1,23 @@
 .e-button_app_menu {
-	position 		: absolute;
-	border-radius 	: 40px;
-	width  			: 40px;
-	height 			: 40px;
-	min-height 		: 40px;
-	top  			: 10px;
-	left  			: 10px;
-	background-color: RGB(253, 68, 130);
+	position: absolute;
+	border-radius: 40px;
+	width: 60px;
+	height: 60px;
+	min-height: 40px;
+	top: 10px;
+	left: 10px;
+	color: white;
+	font-size: 2em;
+	background-color: #03A9F4;
+	line-height: 35px;
+
+	outline 	: none !important;
+
+    .transition(-webkit-filter 0.3s ease)
+}
+
+.e-button_app_menu:active {
+	background-color: #03A9F4;
+	-webkit-filter: contrast(1.2);
+	filter 		: contrast(1.2);
 }

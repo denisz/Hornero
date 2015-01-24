@@ -6,10 +6,15 @@ var _ 	= require('underscore'),
 	classnames  		= require('classnames');
 
 module.exports = React.createClass({
-
+	displayName : "Dialog:Header",
+	
 	render : function () {
-		return (<UI.FlexLayout className="b-dialog_header">
-					{this.props.children}
-				</UI.FlexLayout>)
+		var className = classnames("b-dialog_header", this.props.className);
+
+		return (<UI.FlexBlock height="60px"  {...this.props} className={className} >
+					<UI.FlexLayout direction="row">
+						{this.props.children}
+					</UI.FlexLayout>
+				</UI.FlexBlock>)
 	}
 })

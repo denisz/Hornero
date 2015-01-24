@@ -15,8 +15,6 @@ module.exports =  React.createClass({
 
 	propTypes: {
 		side 			: React.PropTypes.string,
-		width 			: React.PropTypes.number,
-		height 			: React.PropTypes.number,
 		showTransition 	: React.PropTypes.string,
 		hideTransition 	: React.PropTypes.string,
 		isOpened 		: React.PropTypes.bool,
@@ -27,8 +25,7 @@ module.exports =  React.createClass({
 		return {
 			overlay 		: true,
 			side 			: 'right', //right|bottom|left|top
-			isOpened  		: true,
-			position 		: 'center'
+			isOpened  		: true
 		}
 	},
 
@@ -60,7 +57,15 @@ module.exports =  React.createClass({
 		})
 	},
 
-	toggle: function() {
+	tryClose : function () {
+  		if (_.isFunction(this.props.onClose)) {
+  			this.props.onClose(this)	
+  		} else {
+  			this.state.isOpened && this.close();
+  		}
+  	},
+
+  	toggle: function() {
     	this.setState({ isOpened: !this.state.isOpened });
   	},
 
@@ -75,14 +80,11 @@ module.exports =  React.createClass({
   	_wrapChild : function () {
   		if (this.state.isOpened) {
 
-  			var className 	= classnames('e-side_bar_content', 'm-position-' + this.props.position, 'm-side-' + this.props.side, {
+  			var className 	= classnames('e-side_bar_content', 'm-side-' + this.props.side, this.props.className, {
 					'm-opened' : this.state.isOpened
 				});
 
-			var styles = ReactStyle({
-				width : this.props.width,
-				height: this.props.height
-			});
+			var styles = ReactStyle(this.props.styles);
 
 			return (<div className={className} styles={styles}>{this.props.children}</div>)
   		} 
@@ -92,7 +94,7 @@ module.exports =  React.createClass({
 
   	_overlay : function () {
   		if (this.props.overlay && this.state.isOpened) {
-  			return <Tappable className="modal-backdrop in overlay-wrapper" onTap={this.close}></Tappable>;	
+  			return <Tappable className="modal-backdrop in overlay-wrapper" onTap={this.tryClose}></Tappable>;	
   		}
 
   		return null

@@ -6,6 +6,7 @@ var React  				= require('react/addons'),
 module.exports = React.createClass({
 	displayName : 'NavigationAction',
 	mixins 		: [NavigationDelegate],
+
 	propTypes: {
 		className: React.PropTypes.string,
 		component: React.PropTypes.string,
@@ -17,12 +18,14 @@ module.exports = React.createClass({
 		label: React.PropTypes.string,
 		icon: React.PropTypes.string
 	},
+
 	getDefaultProps: function() {
 		return {
 			component: 'button',
 			disabled: false
 		};
 	},
+	
 	render: function() {
 		var className = classnames(this.props.className, this.props.icon, {
 			'action-button': true,

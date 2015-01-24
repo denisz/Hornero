@@ -64,9 +64,12 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 
 	render : function () {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
+		var styles = {
+			width : 300
+		};
 
 		return (
-				<UI.SideBar side={this.props.side} isOpened={this.state.opened} side={this.props.side} width={300}>
+				<UI.SideBar side={this.props.side} onClose={this.hide} isOpened={this.state.opened} side={this.props.side} styles={styles}>
 					<UI.Navigation {...navigationOpts}></UI.Navigation>
 				</UI.SideBar>
 			)

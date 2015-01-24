@@ -39,7 +39,7 @@ module.exports = React.createClass({
 
 	getChildContext: function() {
 		return {
-			navigation : this
+			navigation 	: this			
 		}
 	},
 
@@ -73,6 +73,7 @@ module.exports = React.createClass({
 		return React.createElement(view, _.extend(props, {
 			key 		 : key,
 			navigation   : this,
+			keyName  	 : key, 
 			viewClassName: this.state[key + '_class'] || 'view'
 		}))
 	},

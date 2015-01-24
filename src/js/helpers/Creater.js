@@ -4,7 +4,11 @@ var _ 				= require('underscore'),
 	Source 			= require('../mixins/Source'),
 	States 			= require('../mixins/ViewStates'),
 	Attributes 		= require('../mixins/Attributes'),
-	ContextTypes 	= require('../mixins/ViewContextTypes');
+
+	IDialog 		= require('../mixins/IDialog'),
+
+	ViewContextTypes 	= require('../mixins/ViewContextTypes'),
+	DialogContextTypes 	= require('../mixins/DialogContextTypes');
 
 module.exports = {
 	createView  : function (spec) {
@@ -16,10 +20,26 @@ module.exports = {
 			Source,
 			Attributes,
 			States,
-			ContextTypes.childrenContext
+			ViewContextTypes.childrenContext
 		]);
 
         return React.createBackboneClass(spec);
+	},
+
+	createDialog 	: function (spec, size) {
+		spec = _.defaults(spec || {}, {
+			mixins 	: [],
+			statics : {}
+		});
+
+		spec.statics.getSize = function () { return spec.size };
+		
+		spec.mixins = spec.mixins.concat([
+			DialogContextTypes.parentContext,
+			IDialog
+		]);
+
+		return React.createBackboneClass(spec)
 	},
 
 	createField 	: function (spec) {

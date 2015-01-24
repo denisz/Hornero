@@ -2,12 +2,10 @@
 
 var _ 				= require('underscore');
 var React 	 		= require('react/addons');
-var Showdown 		= require('showdown');
-
-var converter = new Showdown.converter();
+var marked 			= require('marked');
 
 module.exports = React.createClass({
 	render : function () {
-		return null
+		return (<div className="content-markdown" styles={this.props.styles} dangerouslySetInnerHTML={{ __html: marked(this.props.value) }} />)
 	}
 });

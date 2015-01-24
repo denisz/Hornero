@@ -5,11 +5,14 @@ var React 	 		= require('react/addons');
 var UI 		 		= require('_ui');
 var listenDispatcher= require('../../../mixins/ListenDispatcher');
 var classnames 		= require('classnames');
-var Dialogs 		= require('_constants').Dialogs;
+var Dialogs 		= require('_constants').dialogs;
 var Actions 		= require('_constants').actions;
 
 var views = {};
 views[Dialogs.MARKDOWN_EDITOR] 	= require('../dialogs/MarkdownEditor');
+views[Dialogs.NAVIGATOR] 		= require('../dialogs/Navigator');
+views[Dialogs.IMAGE_LOADER] 	= require('../dialogs/ImageLoader');
+
 
 module.exports = React.createClass(_.extend({}, listenDispatcher, {
 	actionsDispatcher : [
@@ -50,8 +53,8 @@ module.exports = React.createClass(_.extend({}, listenDispatcher, {
 		this.setState({ 
 			currentView 	: data.dialogName, 
 			viewProps 		: data.props, 
-			opened 			: true ,
-			viewTransition 	: 'show-from-top'//вот это играет только когда панель уже открыта иначе анимации не будет
+			opened 			: true,
+			viewTransition 	: 'show-from-top'
 		})
 	},
 
@@ -61,10 +64,18 @@ module.exports = React.createClass(_.extend({}, listenDispatcher, {
 
 	render : function () {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
+		var styles = {};
+
+		var currentView = views[navigationOpts.currentView];
+
+		if (currentView) {
+			var size = currentView.getSize(); 
+			_.extend(styles, size);
+		}
 
 		return (
-				<UI.SideBar side={this.props.side} isOpened={this.state.opened} side={this.props.side} height={300}>
-					<UI.Navigation {...navigationOpts}></UI.Navigation>
+				<UI.SideBar side={this.props.side} onClose={this.hide} isOpened={this.state.opened} side={this.props.side} styles={styles}>
+					<UI.Navigation {...navigationOpts} viewClassName="m-transparent"></UI.Navigation>
 				</UI.SideBar>
 			)
 	}

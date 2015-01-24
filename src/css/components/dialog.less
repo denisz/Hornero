@@ -3,21 +3,69 @@
 }
 
 .b-dialog_wrapper .b-dialog_body {
-	
+	.flex(1, 1, auto);
 }
 
 .b-dialog_wrapper .b-dialog_header {
-	
+	height : 60px;	
+}
+
+.b-dialog_wrapper .b-dialog_title {
+	margin 			: auto;
+	color 			: black;
+	font-size 		: 18px;
+	font-weight 	: 500;
+	padding-left 	: 25px;
 }
 
 .b-dialog_wrapper .b-dialog_panel {
-	
+	// .flex(0, 1, 60px);
+	width : 60px;
 }
 
 .b-dialog_wrapper .e-dialog_panel-item {
 	
 }
 
+.b-dialog_wrapper .b-dialog_panel_item,
+.b-dialog_wrapper .b-dialog_header_item {
+	.flex(0, 1, 60px);
+
+	color 		: black;
+	font-size	: 30px;
+}
+
+.b-dialog_wrapper .b-dialog_panel_item .Tappable-active,
+.b-dialog_wrapper .b-dialog_header_item .Tappable-active {
+	background-color: inherit;
+}
+
+.b-dialog_wrapper .b-dialog_panel_item .action-button,
+.b-dialog_wrapper .b-dialog_header_item .action-button {
+	min-height 	: 60px;
+	height 		: 60px;
+	outline 	: none !important;
+
+    .transition(-webkit-filter 0.3s ease)
+}
+
+.b-dialog_wrapper .b-dialog_panel_item .action-button:active,
+.b-dialog_wrapper .b-dialog_header_item .action-button:active {
+	background-color 	: inherit;
+	-webkit-filter 		: contrast(1.2);
+	filter 		 		: contrast(1.2);
+}
+
+.b-dialog_wrapper .b-dialog_ok {
+	background-color 	: #62CB43;
+	color 				: rgb(32, 84, 44);
+}
+
+.b-dialog_wrapper .b-dialog_faq {
+	color : black;
+}
+
 .b-dialog_wrapper .b-dialog_close {
-	
+	background-color: #EE5C55;
+	color  			: #772A28;
 }

@@ -35,6 +35,19 @@ module.exports = {
 		run(props)
 	},
 
+	hideDialog : function (dialogName, props) {
+		var props = {
+			action 	: actions.EDITOR_HIDE_DIALOG,
+			source 	: sources.EDITOR,
+			data	: {
+				dialogName 	: dialogName,
+				props 		: props
+			}
+		};
+		
+		run(props)	
+	},
+
 	showModalDialog : function (dialogName, dialogProps) {
 		var props = {
 			action 	: actions.EDITOR_SHOW_MODAL_DIALOG,

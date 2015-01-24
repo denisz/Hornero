@@ -7,22 +7,22 @@ var _ 	= require('underscore'),
 	Tappable  			= require('react-tappable');
 
 module.exports = React.createClass({
-	displayName : 'DialogAction',
+	displayName : 'Dialog:ActionButton',
 	mixins 		: [DialogDelegate],
 
 	propTypes: {
-		className: React.PropTypes.string,
-		component: React.PropTypes.string,
-		disabled: React.PropTypes.bool,
-		onTap: React.PropTypes.func,
-		label: React.PropTypes.string,
-		icon: React.PropTypes.string
+		className 	: React.PropTypes.string,
+		component 	: React.PropTypes.string,
+		disabled 	: React.PropTypes.bool,
+		onTap 		: React.PropTypes.oneOfType([ React.PropTypes.func, React.PropTypes.string ]),
+		label 		: React.PropTypes.string,
+		icon 		: React.PropTypes.string
 	},
+
 	getDefaultProps: function() {
 		return {
 			component 	: 'button',
-			disabled 	: false,
-			onTap 		: 'hideDialog'
+			disabled 	: false
 		};
 	},
 
@@ -33,7 +33,7 @@ module.exports = React.createClass({
 		});
 
 		var label  = this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
-		var action = _.isString(this.props.onTap) ? this[this.props.onTap + 'Fn'] : this.props.onTap;
+		var action = _.isString(this.props.onTap) ? this[this.props.onTap] : this.props.onTap;
 
 		return (
 			<Tappable className={className} component={this.props.component} onTap={action}>
