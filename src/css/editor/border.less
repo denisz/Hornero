@@ -1,0 +1,43 @@
+.vertical-border-bottom,
+.vertical-border-right,
+.vertical-border-left,
+.vertical-border-top{
+	position: relative;
+}
+
+.vertical-border-left:after {
+	content 	: "";
+	top 		: 0;
+	left 		: 0;
+	bottom 		: 0;
+	border-left : 1px solid #ddd;
+	position 	: absolute;
+}
+
+.vertical-border-top:after {
+	content 	: "";
+	top 		: 0;
+	left 		: 0;
+	right 		: 0;
+	border-top  : 1px solid #ddd;
+	position 	: absolute;
+}
+
+.vertical-border-bottom:after {
+	content 	: "";
+	bottom 		: 0;
+	left 		: 0;
+	right 		: 0;
+	border-bottom  : 1px solid #ddd;
+	position 	: absolute;
+	z-index 	: -1;
+}
+
+.vertical-border-right:after {
+	content 	: "";
+	top 		: 0;
+	right 		: 0;
+	bottom 		: 0;
+	border-left : 1px solid #ddd;
+	position 	: absolute; 	 
+}
