@@ -29,16 +29,6 @@ module.exports =  React.createClass({
 		}
 	},
 
-	/*
-		'show-from-left',
-		'show-from-right',
-		'show-from-top',
-		'show-from-bottom',
-		'reveal-from-left',
-		'reveal-from-right',
-		'reveal-from-top',
-		'reveal-from-bottom'
-	*/
 	getInitialState : function () {
 		return {
 			isOpened 			: this.props.isOpened,

@@ -4,31 +4,33 @@ var React  				= require('react/addons'),
 
 module.exports = React.createClass({
 	displayName : 'ActionButton',
+	
 	propTypes: {
-		className: React.PropTypes.string,
-		component: React.PropTypes.string,
-		disabled: React.PropTypes.bool,
-		onTap: React.PropTypes.func,
-		label: React.PropTypes.string,
-		icon: React.PropTypes.string
+		className 	: React.PropTypes.string,
+		component 	: React.PropTypes.string,
+		disabled 	: React.PropTypes.bool,
+		onTap 		: React.PropTypes.func,
+		label 		: React.PropTypes.string,
+		icon 		: React.PropTypes.string
 	},
+	
 	getDefaultProps: function() {
 		return {
-			component: 'button',
-			disabled: false
+			component 		: 'button',
+			disabled 		: false			 
 		};
 	},
+
 	render: function() {
 		var className = classnames(this.props.className, this.props.icon, {
-			'action-button': true,
-			'disabled': this.props.disabled
+			'action-button' : this.props.component === 'button',
+			'disabled' 		: this.props.disabled
 		});
 
-		var label 	= this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
-		var action 	= this.props.onTap;
-
+		var label = this.props.label ? <div className="action-button-label">{this.props.label}</div> : null;
+		
 		return (
-			<Tappable className={className} component={this.props.component} onTap={action}>
+			<Tappable className={className} component={this.props.component} onTap={this.props.onTap}>
 				{label}
 				{this.props.children}
 			</Tappable>

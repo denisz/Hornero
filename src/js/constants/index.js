@@ -12,5 +12,6 @@ module.exports = {
 	floatPanel 			: require('./floatPanel'),
 	viewports 			: require('./viewports'),
 	devices 			: require('./devices'),
-	dialogs 			: require('./dialogs')
+	dialogs 			: require('./dialogs'),
+	settingsSections 	: require('./settingsSections')
 }

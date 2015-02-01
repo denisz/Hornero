@@ -65,8 +65,11 @@ gulp.task('images', function() {
 });
 
 gulp.task('fonts', function() {
-	return gulp.src(['src/fonts/**', 'node_modules/bootstrap/fonts/**'])
+	gulp.src(['src/fonts/**', 'node_modules/bootstrap/fonts/**'])
 		.pipe(gulp.dest('www/fonts'));
+
+	return gulp.src(['node_modules/connect-fonts-sourcesanspro/fonts/default/**'])
+			.pipe(gulp.dest('www/fonts/SourceSansPro'));
 });
 
 function doBundle(target, name, dest) {

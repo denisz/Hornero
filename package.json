@@ -6,6 +6,7 @@
   "main": "src/js/app.js",
   "author": "denis",
   "dependencies": {
+    "connect-fonts-sourcesanspro"   : "^0.0.3",
     "async"           : "^0.9.0",
     "classnames"      : "^1.0.0",
     "express"         : "^4.10.4",
@@ -38,7 +39,10 @@
     "react-svg"         : "^1.0.0",
     "marked"            : "^0.3.2",
     "react-ace"         : "^1.0.1",
-    "highlight.js"      : "^8.4.0"    
+    "highlight.js"      : "^8.4.0",
+    "react-social"      : "^0.1.4",
+    "codemirror"        : "^4.12.0"
+
   },
   "devDependencies": {
     "brfs"            : "^1.2.0",

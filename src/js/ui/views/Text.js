@@ -1,16 +1,11 @@
 /** @jsx React.DOM */
 
 var Creater 	= require('../../helpers/Creater');
-var UI 		 	= require('_ui');
 var React 		= require('react/addons');
-var Group 		= require('./Group');
+var UI 		 	= require('_ui');
 
 module.exports = Creater.createView({
 	displayName : 'Text',
-
-	handleClick : function () {
-		console.log(12)
-	},
 
 	render  	: function () {
 		var props = this.getSource(),
@@ -19,7 +14,9 @@ module.exports = Creater.createView({
 		
 		return (<UI.Styles model={model.getStyles()} componentClass={UI.FlexBlock}>
 					<div>{props.get('text')}</div>
-					<Group collection={model.getSubviews()} />
+					<UI.BuildHelper mode={this.state.mode}>
+						<UI.PivotEdit model={model} />
+					</UI.BuildHelper>
 				</UI.Styles>)
 	}
 });

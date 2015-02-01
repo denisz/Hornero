@@ -4,9 +4,9 @@ var React = require('react/addons'),
 module.exports = React.createClass({
 	displayName: 'FlexBlock',
 	propTypes: {
-		className: React.PropTypes.string,
-		height: React.PropTypes.string,
-		scrollable: React.PropTypes.bool
+		className 	: React.PropTypes.string,
+		height 		: React.PropTypes.oneOfType([ React.PropTypes.string, React.PropTypes.number ]),
+		scrollable 	: React.PropTypes.bool
 	},
 
 	getDefaultProps: function() {
@@ -43,6 +43,10 @@ module.exports = React.createClass({
 		if (this.props.scrollable) {
 			inlineStyle.overflowY = 'auto';
 			inlineStyle.WebkitOverflowScrolling = 'touch';
+		}
+
+		if (this.props.relative) {
+			inlineStyle.position = 'relative';
 		}
 
 		return <div className={className} styles={this.props.styles} style={inlineStyle}>{this.props.children}</div>;

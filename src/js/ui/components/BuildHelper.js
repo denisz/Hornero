@@ -1,22 +1,24 @@
 /** @jsx React.DOM */
 
 var React 	 	= require('react/addons'),
-	modes 		= require('../../constants/modeView');
+	modes 		= require('_constants').modeView;
 
 module.exports = React.createClass({
 	propsTypes : {
-		mode : React.PropTypes.string.isRequire
+		mode : React.PropTypes.string.isRequired
 	},
 
 	isCanEdit : function () {
-		return this.props.mode == modes.EDIT
+		return this.props.mode === modes.EDIT
 	},
 
 	render : function () {
+		var build = null;
+
 		if (this.isCanEdit()) {
-			return (<span>{this.props.children }</span>)
+			build = (<span>{this.props.children}</span>)
 		}
 
-		return null
+		return build
 	}
 });

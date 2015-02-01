@@ -3,7 +3,7 @@ module.exports = {
 	Styles 			: require('./Styles'),
 	Progresslinear 	: require('./Progresslinear'),
 	Progresscircle 	: require('./Progresscircle'),
-	Pivotedit 		: require('./PivotEdit'),
+	PivotEdit 		: require('./PivotEdit'),
 	Spinner 		: require('./Spinner'),
 	SideBar 		: require('./SideBar'),
 	Navigation 		: require('./Navigation'),

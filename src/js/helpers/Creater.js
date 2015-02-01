@@ -42,8 +42,20 @@ module.exports = {
 		return React.createBackboneClass(spec)
 	},
 
-	createField 	: function (spec) {
-		return React.createClass(spec)
+	createStyle 	: function (spec) {
+		return React.createBackboneClass(spec)
+	},
+
+	createWithOptions : function (Component, options) {
+		return React.createClass({
+			getDefaultProps : function () {
+				return options
+			},
+
+			render : function () {
+				return (<Component {...this.props}>{this.props.children}</Component>);
+			}
+		})
 	},
 
 	createWindow 	: function (props) {

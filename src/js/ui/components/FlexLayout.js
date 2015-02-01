@@ -10,6 +10,7 @@ module.exports = React.createClass({
 
 	getDefaultProps: function() {
 		return {
+			scrollable 		: false,
 			className		: '',
 			direction 		: 'column',
 			alignItems 		: 'stretch',
@@ -47,6 +48,13 @@ module.exports = React.createClass({
 			WebkitJustifyContent: justifyContent,
 			MozJustifyContent: justifyContent,
 			JustifyContent: justifyContent
+		}
+
+
+		// allow blocks to be scrollable
+		if (this.props.scrollable) {
+			inlineStyle.overflowY = 'auto';
+			inlineStyle.WebkitOverflowScrolling = 'touch';
 		}
 
 		return <div className={className} style={inlineStyle} styles={this.props.styles}>{this.props.children}</div>;

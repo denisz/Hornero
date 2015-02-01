@@ -25,7 +25,7 @@ module.exports = React.createClass(_.extend({}, listenDispatcher, {
 	getDefaultProps : function () {
 		return {
 			currentView : null,
-			side   		: "top",
+			side   		: 'top',
 			views 		: views
 		}
 	},

@@ -1,10 +1,9 @@
 /** @jsx React.DOM */
 
-var Creater 	= require('../../../helpers/Creater');
-var UI 		 	= require('touchstonejs').UI;
+var UI 		 	= require('_ui');
 var React 		= require('react/addons');
 
-module.exports = Creater.createField({
+module.exports = React.createClass({
 	render : function () {
 		return (<div></div>)
 	}

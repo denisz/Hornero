@@ -11,10 +11,8 @@ module.exports = React.createClass({
 	render : function () {
 		var className = classnames("b-dialog_header", this.props.className);
 
-		return (<UI.FlexBlock height="60px"  {...this.props} className={className} >
-					<UI.FlexLayout direction="row">
-						{this.props.children}
-					</UI.FlexLayout>
-				</UI.FlexBlock>)
+		return (<UI.FlexLayout direction="row" height="60px"  {...this.props} className={className}>
+					{this.props.children}
+				</UI.FlexLayout>)
 	}
 })

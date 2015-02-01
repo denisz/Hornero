@@ -24,5 +24,8 @@ module.exports = [
 	'show-panel-bottom',
 	'reveal-panel-bottom',
 
+	'show-panel-fade',
+	'reveal-panel-fade',
+	
 	'show-overlay-fade'
 ];

@@ -8,10 +8,6 @@ var Group 		= require('./Group');
 module.exports = Creater.createView({
 	displayName : 'Picture',
 
-	handleClick : function () {
-		console.log(12)
-	},
-
 	render  	: function () {
 		var props = this.getSource(),
 			model = this.getModel(),
@@ -19,6 +15,9 @@ module.exports = Creater.createView({
 		
 		return (<UI.Styles model={model.getStyles()} componentClass={UI.FlexBlock}>
 					<UI.ImageLoader src={model.get('src')} />
+					<UI.BuildHelper mode={this.state.mode}>
+						<UI.PivotEdit model={model} />
+					</UI.BuildHelper>
 				</UI.Styles>)
 	}
 });
