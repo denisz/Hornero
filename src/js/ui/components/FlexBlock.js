@@ -45,6 +45,7 @@ module.exports = React.createClass({
 			inlineStyle.WebkitOverflowScrolling = 'touch';
 		}
 
+		//relative block
 		if (this.props.relative) {
 			inlineStyle.position = 'relative';
 		}
