@@ -30,13 +30,13 @@ module.exports = Creater.createDialog({
 						<Dialog.CloseButton />
 						<Dialog.Title>Markdown Editor</Dialog.Title>
 						<Dialog.HeaderItem className="b-dialog_faq">
-							<UI.Icon icon="ios-lightbulb-outline" />
+							<UI.Icon named="ios-lightbulb-outline" />
 						</Dialog.HeaderItem>
 					</Dialog.Header>
 					<Dialog.Body>
 						<Dialog.Panel className="vertical-border-right">
 							<Dialog.PanelItem>
-								<UI.Icon icon="ios-compose-outline" />
+								<UI.Icon named="ios-compose-outline" />
 							</Dialog.PanelItem>
 						</Dialog.Panel>
 					</Dialog.Body>

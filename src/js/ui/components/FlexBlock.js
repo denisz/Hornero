@@ -11,8 +11,8 @@ module.exports = React.createClass({
 
 	getDefaultProps: function() {
 		return {
-			className: '',
-			height: ''
+			className 	: '',
+			height 		: ''
 		};
 	},
 

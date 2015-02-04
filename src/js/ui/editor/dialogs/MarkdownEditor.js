@@ -66,7 +66,7 @@ module.exports = Creater.createDialog({
 					<Dialog.Header className="vertical-border-bottom">
 						<Dialog.CloseButton />
 						<Dialog.HeaderItem onTap={this.handleSuccess}>
-							<UI.Icon icon="android-done" />
+							<UI.Icon named="android-done" />
 						</Dialog.HeaderItem>
 						<Dialog.Title>Markdown Editor</Dialog.Title>
 					</Dialog.Header>

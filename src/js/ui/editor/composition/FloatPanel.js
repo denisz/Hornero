@@ -65,7 +65,7 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 	render : function () {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
 		var styles = {
-			width : 300
+			width : 213
 		};
 
 		return (

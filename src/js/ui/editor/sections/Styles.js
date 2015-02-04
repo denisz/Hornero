@@ -22,10 +22,10 @@ module.exports = React.createClass({
 		var view = styles[key], props = {};
 
 		return React.createElement(view, _.extend(props, {
-			key 		 : key,
 			navigation   : this,
-			keyName  	 : key, 
-			className 	 : 'style-view'
+			key	  	 	 : key, 
+			className 	 : 'style-view',
+			model 		 : this.props.model
 		}))
 	},
 
@@ -44,7 +44,6 @@ module.exports = React.createClass({
 	},
 
 	_stylesFilled : function () {
-		console.log(this.state.fields);
 		return _.map(this.state.fields, this.createField);
 	},
 

@@ -15,7 +15,7 @@ module.exports = React.createClass({
 	render : function () {
 		return (
 				<UI.NavigationAction className="e-button_app_menu" onTap={this.handleClick}>
-					<UI.Icon icon="paper-airplane" />
+					<UI.Icon named="paper-airplane" />
 				</UI.NavigationAction>
 			)
 	}

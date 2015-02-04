@@ -7,12 +7,12 @@ module.exports = React.createClass({
 	getDefaultProps : function () {
 		return {
 			prefix 	: "ion-",
-			icon 	: 'ios-close-empty'
+			named 	: 'ios-close-empty'
 		}
 	},
 
 	render : function () {
-		var className = classnames("icon", this.props.prefix + this.props.icon);
+		var className = classnames("icon", this.props.prefix + this.props.named, this.props.className);
 		return (<i className={className} />)
 	}
 })

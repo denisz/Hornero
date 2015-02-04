@@ -12,7 +12,7 @@ module.exports = React.createClass({
 	render : function () {
 		return (<UI.FlexBlock height="60px" className="b-dialog_header_item">
 					<ActionButton onTap="hideDialog">
-						<UI.Icon icon="android-close" />
+						<UI.Icon named="android-close" />
 					</ActionButton>
 				</UI.FlexBlock>)
 	}

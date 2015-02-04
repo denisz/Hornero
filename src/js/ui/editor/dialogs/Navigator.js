@@ -55,23 +55,23 @@ module.exports = Creater.createDialog({
 						<Dialog.CloseButton />
 						<Dialog.Title>Markdown Editor</Dialog.Title>
 						<Dialog.HeaderItem className="b-dialog_faq">
-							<UI.Icon icon="ios-lightbulb-outline" />
+							<UI.Icon named="ios-lightbulb-outline" />
 						</Dialog.HeaderItem>
 					</Dialog.Header>
 					<Dialog.Body>
 						<Dialog.Panel className="vertical-border-right">
 							<Dialog.PanelItem>
-								<UI.Icon icon="ios-compose-outline" />
+								<UI.Icon named="ios-compose-outline" />
 							</Dialog.PanelItem>
 							<Dialog.PanelItem>
-								<UI.Icon icon="ios-box-outline" />
+								<UI.Icon named="ios-box-outline" />
 							</Dialog.PanelItem>
 							<Dialog.PanelItem>
-								<UI.Icon icon="ios-cart-outline" />
+								<UI.Icon named="ios-cart-outline" />
 							</Dialog.PanelItem>
 							<UI.FlexBlock />
 							<Dialog.PanelItem>
-								<UI.Icon icon="ios-gear-outline" />
+								<UI.Icon named="ios-gear-outline" />
 							</Dialog.PanelItem>
 						</Dialog.Panel>
 						<Dialog.Content>

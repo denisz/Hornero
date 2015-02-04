@@ -1,3 +1,4 @@
 module.exports = {
-	StyleWithOptions : require('./StyleWithOptions')
+	StyleWithOptions 	: require('./StyleWithOptions'),
+	LinkedModelMixin  	: require('./LinkedModelMixin')
 }
