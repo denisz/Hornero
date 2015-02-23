@@ -19,7 +19,10 @@ var Model = Backbone.Model.extend(_.extend({}, Sync, Transform, {
 			}
 		},
 		'styles'   : {
-			model : require('../models/Style') 
+			model : require('../models/Style'),
+			options: {
+				parse : true
+			}
 		}
 	}
 }));

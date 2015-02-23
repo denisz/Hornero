@@ -3,14 +3,17 @@
 
 	label, .label {
 		display 		: inline-block;
-		width 			: 52px;
-		margin-right 	: 5px;
-		font-family 	: Helvetica;
-		font-style 		: normal;
-		font-size 		: 12px;
-		font-weight 	: 400;
-		margin-left 	: 8px;
-		color 			: black;
+		width 			: 25%;
+		padding-right 	: 5px;
+		padding-left 	: 8px;
+		
+		font-family: "Helvetica Neue",Helvetica,sans-serif;
+		font-style: normal;
+		font-size: 12px;
+		font-weight: 300;
+		color: rgba(0,0,0,.8);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 	}
 
 	.group {
@@ -18,22 +21,25 @@
 	}
 	
 	.control {
-		font-family 	: Helvetica;
+		font-family 	: "Helvetica Neue", Helvetica, sans-serif;
 		font-style 		: normal;
-		font-size 		: 12px;
-		font-weight 	: 400;
+		font-size 		: 0.8em;
+		font-weight 	: 500;
+		line-height 	: 13px;
 
-		line-height 	: 12px;
+		//background 		: white;  
 
 		width 			: 58px;
 		height 			: 19px;
 		margin  		: 0 10px 0 5px;
 
-		color 			: black;
-
-		outline 		: none !important;
+		color 			: rgba(0, 0, 0, 0.8);
+		//outline 		: none !important;
 
 		display: inline-block;
+
+		 -webkit-font-smoothing: antialiased;
+		 text-rendering: optimizeLegibility;
 	}
 
 	.control.icon {
@@ -44,23 +50,77 @@
 		display : inline-block;
 	}
 
+	.control.xss {
+		width: 15%;
+	}
+
 	.control.xs {
-		width : 33px;
-		height 	: 19px;
+		width 	: 33px;
 	}
 
 	.control.sm {
 		width 	: 27%;
-		height 	: 19px;
 	}
 
 	.control.lg {
-		width   : 61%;	
-		height 	: 19px;
+		width   : 65%;	
 	}
 
-	.control[type="range"] {
-		.translate3d(0; 6px; 0);
+	.control.xxl {
+		width   : 100%;	
+	}
+
+	.control.center {
+		.translate(-50%, 0);
+		left: 50%;
+	}
+
+	input[type="text"],
+	input[type="number"] {
+		.retina-1px-border-top-and-bottom(#acacac);
+	}
+
+	input[type="range"]{
+		outline : none;
+	}
+
+	input[type="text"],
+	input[type="number"] {
+		background 		: rgba(117, 117, 117, 0.12);
+		border-radius 	: 3px;
+		border 			: none;
+		padding-left 	: 5px;
+	}
+
+	button.control {
+		line-height: 12px;
+		height: 20px;
+		&:active {
+			color : white;
+		}
+	}
+
+	.divider {
+		margin-top: 0px;
+		margin-bottom: 15px;
+		border: 0;
+	    height: 1px;
+	    background: #333;
+	    background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.25)), color-stop(100%,hsla(0,0%,0%,0)));
+	    background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.25) 50%, hsla(0,0%,0%,0) 100%);
+	    background:    -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.25) 50%, hsla(0,0%,0%,0) 100%);
+	    background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.25) 50%, hsla(0,0%,0%,0) 100%);
+	    background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.25) 50%, hsla(0,0%,0%,0) 100%);
+	    background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.25) 50%, hsla(0,0%,0%,0) 100%);
+	}
+
+	.color-show {
+		width 		: 30px;
+		height 		: 15px;
+		display  	: inline-block;
+		border  	: 1px solid white;
+		
+		.box-shadow(0px 1px 2px #bbbbbb);		
 	}
 
 	.help {
@@ -73,7 +133,7 @@
 			font-style  : normal;
 			font-size 	: 10px;
 			font-weight : 400;
-			top 		: 23px;
+			top 		: 18px;
 			left 		: 0;
 			width 		: 100%;
 			height 		: 15px;

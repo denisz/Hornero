@@ -37,12 +37,12 @@ module.exports = {
 	},
 
 	_generateTransformSymlink : function (transform) {
-		var symlink = _.map(transform, function (propertyProps, proppertyName) {
-			var symlinkName  = '_' + proppertyName, symlinkObject;
+		var symlink = _.map(transform, function (propertyProps, propertyName) {
+			var symlinkName  = '_' + propertyName, symlinkObject;
+			
+			symlinkObject = new propertyProps.model( this.get(propertyName), propertyProps.options );
 
-			symlinkObject = new propertyProps.model( this.get(proppertyName), propertyProps.options );
-
-			this.on('change:' + proppertyName, function (model, data, options) {
+			this.on('change:' + propertyName, function (model, data, options) {
 				if (data) {
 					symlinkObject.set(data, options);
 				} else {

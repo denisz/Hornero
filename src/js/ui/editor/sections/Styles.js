@@ -19,13 +19,14 @@ module.exports = React.createClass({
 	},
 
 	createField : function (key) {
-		var view = styles[key], props = {};
+		var view = styles[key], props = {}, model = this.props.model;
 
 		return React.createElement(view, _.extend(props, {
 			navigation   : this,
 			key	  	 	 : key, 
 			className 	 : 'style-view',
-			model 		 : this.props.model
+			modelView 	 : model, 
+			model 		 : model.getStyles()
 		}))
 	},
 

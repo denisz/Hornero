@@ -4,7 +4,6 @@ var Creater 		= require('../../../helpers/Creater');
 var _ 				= require('underscore');
 var React 	 		= require('react/addons');
 var UI 		 		= require('_ui');
-var Fields 			= require('_fields');
 var BS 				= require('react-bootstrap');
 var ReactStyles 	= require('react-style');
 var Addons 			= require('_styles:addons');
@@ -23,11 +22,11 @@ module.exports = Creater.createStyle({
 			size = (<div className="group">
 						<label>Size</label>
 						<span className="help" data-content="width">
-							<input type="number" className="control sm icon" valueLink={this.linkState('width')} />
+							<input type="text" className="control sm icon" valueLink={this.linkState('width')} />
 						</span>
 						<UI.Icon named="android-lock" className="sm"/>
 						<span className="help" data-content="height">
-							<input type="number" className="control sm icon" valueLink={this.linkState('height')} />
+							<input type="text" className="control sm icon" valueLink={this.linkState('height')} />
 						</span>
 					</div>)
 		}
@@ -36,20 +35,19 @@ module.exports = Creater.createStyle({
 			translate = (<div className="group">
 							<label>Position</label>
 							<span className="help" data-content="X">
-								<input type="number" className="control sm" valueLink={this.linkState('left')} />
+								<input type="text" className="control sm" valueLink={this.linkState('left')} />
 							</span>
 							<span className="help" data-content="Y">
-								<input type="number" className="control sm" valueLink={this.linkState('top')}  />
+								<input type="text" className="control sm" valueLink={this.linkState('top')}  />
 							</span>
 						</div>)
 		}
 
 		return (<UI.FlexBlock className={this.props.className} height={"auto"}>
-					<div className="field-header">Box Model</div>
-					<form className="form">
+					<div className="form">
 						{translate}
 						{size}
-					</form>
+					</div>
 				</UI.FlexBlock>)
 	}
 });

@@ -13,6 +13,6 @@ module.exports = React.createClass({
 
 	render : function () {
 		var className = classnames("icon", this.props.prefix + this.props.named, this.props.className);
-		return (<i className={className} />)
+		return (<i {...this.props} className={className} />)
 	}
 })

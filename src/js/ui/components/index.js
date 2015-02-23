@@ -17,5 +17,6 @@ module.exports = {
 	Markdown 		: require('./Markdown'),
 	FlexBlock 		: require('./FlexBlock'),
 	FlexLayout 		: require('./FlexLayout'),
-	Icon 			: require('./Icon')
+	Icon 			: require('./Icon'),
+	OverlayTrigger  : require('./OverlayTrigger')
 }

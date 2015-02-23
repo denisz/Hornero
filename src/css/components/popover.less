@@ -1,0 +1,33 @@
+.popover {
+	//.scale(1, 1);
+	.transition(-webkit-transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1););	
+}
+
+.popover.left {
+	.transform-origin(right center);
+}
+
+.popover.bottom {
+	.transform-origin(center top);	
+}
+
+.popover.right {
+	.transform-origin(left center);	
+}
+
+.popover.top {
+	.transform-origin(center bottom);	
+}
+
+.popover.in-leave{
+	.scale(1, 1);	
+}
+.popover.in-leave-active{
+	.scale(0, 0);	
+}
+.popover.in-enter {
+	.scale(0, 0);	
+}
+.popover.in-enter-active {
+	.scale(1, 1);	
+}

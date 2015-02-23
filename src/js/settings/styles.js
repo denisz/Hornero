@@ -8,5 +8,10 @@ module.exports = {
   }),
   'boxModel'   : Addons.StyleWithOptions(Styles.BoxModel, {
       properties : ['size', 'translate']
-  })
+  }),
+
+  'border' : Addons.StackProperties(Styles.Border, {
+  		defines : ['border-left', 'border-right','border-top', 'border-bottom'],
+  		label 	: 'Border'
+  	})
 }

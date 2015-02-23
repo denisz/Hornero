@@ -65,11 +65,11 @@ module.exports = React.createClass(_.extend( {}, listenDispatcher, {
 	render : function () {
 		var navigationOpts = _.pick(this.state, ['currentView', 'views', 'viewProps', 'viewTransition']);
 		var styles = {
-			width : 213
+			width : 250
 		};
 
 		return (
-				<UI.SideBar side={this.props.side} onClose={this.hide} isOpened={this.state.opened} side={this.props.side} styles={styles}>
+				<UI.SideBar side={this.props.side} overlay={false} onClose={this.hide} isOpened={this.state.opened} side={this.props.side} styles={styles}>
 					<UI.Navigation {...navigationOpts}></UI.Navigation>
 				</UI.SideBar>
 			)

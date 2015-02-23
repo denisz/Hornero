@@ -9,7 +9,7 @@ module.exports = {
 			displayName : 'Text',
 			text 		: 'Haha',
 			styles 		: {
-				border  		: '1px solid red',
+				border  		: '1px solid #ff0000',
 				marginTop 		: 10,
 				color  			: 'black',
 				fontFamily 		: 'Trebushet',
@@ -26,13 +26,13 @@ module.exports = {
 				},
 				{
 					displayName : 'Col',
-					styles 		: {
-						border  		: '1px solid red',
-						backgroundColor : 'white'
-					},
 					subviews : [	
 						{
-							displayName : 'Text'
+							displayName : 'Text',
+							styles 		: {
+								border  		: '1px solid #ff0000',
+								backgroundColor : 'white'
+							}
 						},
 						{
 							displayName : 'Picture'

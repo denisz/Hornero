@@ -1,4 +1,5 @@
 module.exports = {
-	ready  : require('./ready'),
-	common : require('./common')
+	ready  		: require('./ready'),
+	common 		: require('./common'),
+	substitute  : require('./substitute')
 }
