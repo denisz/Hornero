@@ -26,7 +26,7 @@ module.exports = React.createClass({
 		var popover = (<BS.Popover>
 							<select name="select" onChange={this.handleChange}>
 								{this.props.defines.map( function(item) {
-									 return <option value={item.value}>{item.label}</option>
+									 return <option key={item.value} value={item.value}>{item.label}</option>
 								})}
 							</select>
 						</BS.Popover>);

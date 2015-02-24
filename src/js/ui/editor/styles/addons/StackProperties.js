@@ -20,7 +20,7 @@ module.exports = function (component, options) {
 			var model = this.getModel();
 			
 			if (!model.has(style)) {
-				model.set(style, "");	
+				model.set(style, "1px solid #757575");	
 			}
 		},
 

@@ -31,6 +31,8 @@ var HelperModel = {
 		return new modelPrototype(attrs, options);
 	},
 
+	//рекурсивный поиск элемента
+	//ускорить бинарный деревом
 	getById : function (id, modelOrModels) {
 		var subviews = modelOrModels.getSubviews();
 		

@@ -6,11 +6,20 @@ var React 		= require('react/addons');
 var BS 			= require('react-bootstrap');
 var Group 		= require('./Group');
 
+var Actions 	= require('_actions').Editor;
+var floatPanel 	= require('_constants').floatPanel;
+var Filter 		= require('_models').Filter;
+
 module.exports = Creater.createView({
 	displayName : 'Row',
 
 	handleClick : function () {
-		console.log(12)
+		Actions.showFloatPanelWith(floatPanel.LIBRARY, {
+			model  : this.props.model,
+			filter : new Filter({
+				displayName : Filter.oneOf(['Col'])
+			}) 
+		});
 	},
 
 	_getEmpty 	: function () {

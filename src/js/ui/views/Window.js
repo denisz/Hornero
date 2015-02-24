@@ -4,8 +4,10 @@ var Creater  	= require('../../helpers/Creater');
 var React 	 	= require('react/addons');
 var UI 		 	= require('_ui');
 var Group 	 	= require('./Group');
+
 var Actions  	= require('_actions').Editor;
 var FloatPanel 	= require('_constants').floatPanel;
+var Filter 		= require('_models').Filter;
 
 module.exports = Creater.createView({
 	displayName : 'Window',
@@ -18,7 +20,10 @@ module.exports = Creater.createView({
 
 	handleClickShowLibrary : function () {
 		Actions.showFloatPanelWith(FloatPanel.LIBRARY, {
-			model : this.getModel()
+			model : this.getModel(),
+			filter: new Filter({
+				displayName : Filter.oneOf(['Row', 'Container', 'Empty'])
+			})
 		})	
 	},
 

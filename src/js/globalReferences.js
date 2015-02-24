@@ -6,6 +6,7 @@ var Services 		= require('./services');
 var Constants 		= require('./constants');
 var Actions 		= require('./actions');
 var Helpers 		= require('./helpers');
+var ReactStyle  	= require('react-style');
 
 var config = require('./config');
 
@@ -19,6 +20,7 @@ globalRefences = {
 	Constants 		: Constants,
 	Actions 		: Actions,
 	Services 		: Services,
+	ReactStyle 		: ReactStyle
 };
 
 if (config.debug) {

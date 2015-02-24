@@ -3,7 +3,8 @@
 var React 			= require('react/addons');
 var ActionButton 	= require('./ActionButton');
 
-var Actions 		= require('_actions').Editor;
+var Editor 			= require('_actions').Editor;
+var View 			= require('_actions').View;
 var FloatPanel 		= require('_constants').floatPanel;
 
 
@@ -20,16 +21,24 @@ module.exports = React.createClass({
 		}
 	},
 
-	handleClick : function () {
-		Actions.showFloatPanelWith(FloatPanel.SETTINGS, {
+	handleClickEdit : function () {
+		Editor.showFloatPanelWith(FloatPanel.SETTINGS, {
 			model : this.props.model
 		});
 	},
 
+	handleClickRemove : function () {
+		var id = this.props.model.get('id');
+		View.remove(id);
+	},	
+
 	render : function () {
 		return (<div className="b-pivot-edit">
-					<ActionButton component="a" className="e-pivot-edit" onTap={this.handleClick}>
+					<ActionButton component="a" className="e-pivot-edit" onTap={this.handleClickEdit}>
 						edit
+					</ActionButton>
+					<ActionButton component="a" className="e-pivot-remove" onTap={this.handleClickRemove}>
+						remove
 					</ActionButton>
 				</div>)
 	 }

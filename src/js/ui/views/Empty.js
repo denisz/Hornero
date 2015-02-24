@@ -5,11 +5,16 @@ var UI 		 	= require('_ui');
 var React 		= require('react/addons');
 var Group 		= require('./Group');
 
+var Actions 	= require('_actions').Editor;
+var floatPanel 	= require('_constants').floatPanel;
+
 module.exports = Creater.createView({
 	displayName : 'Empty',
 
 	handleClick : function () {
-		console.log(12)
+		Actions.showFloatPanelWith(floatPanel.LIBRARY, {
+			model : this.props.model
+		});
 	},
 
 	_getEmpty 	: function () {

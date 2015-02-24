@@ -1,15 +1,14 @@
 /** @jsx React.DOM */
 
-var React 	= require('react/addons');
-var modeTableView = require('../constants/modeTableView');
+var React 			= require('react/addons');
+var modeTableView 	= require('../constants/modeTableView');
+var classnames  	= require('classnames');
 
 var MAX_COLUMNS = 12;
 
 module.exports = {
 
-	_toggleModeAttributes : function () {
-		var attrs = {};	
-
+	_toggleModeAttributes : function (attrs) {
 		mode  = this.props.mode;
 	
 		switch(mode) {
@@ -23,7 +22,7 @@ module.exports = {
 			break;
 		}
 
-		attrs.className = 'm-' + mode.toLowerCase();
+		attrs.className = classnames('m-' + mode.toLowerCase(), attrs.className);
 
 		return attrs;
 	},

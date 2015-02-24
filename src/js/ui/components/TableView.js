@@ -23,6 +23,7 @@ module.exports = React.createBackboneClass({
 	    collection  	: React.PropTypes.object.isRequired,
 	    factoryItem		: React.PropTypes.func.isRequired,
 	    filter 			: React.PropTypes.object,
+	    classNameItem 	: React.PropTypes.string,
 	    sort 			: React.PropTypes.oneOfType([ React.PropTypes.string, React.PropTypes.func ])
 	},
 
@@ -33,6 +34,7 @@ module.exports = React.createBackboneClass({
 			mode 				: modeTableView.TABLE,
 			withToggle 			: true,
 
+			classNameItem 		: 'item',
 			factoryItem 		: utils.null
 		}
 	},
@@ -47,15 +49,15 @@ module.exports = React.createBackboneClass({
 		var filter 		= this.props.filter,
 			collection 	= this.props.collection;
 
+		var items = _.pluck(this.props.collection.models, 'attributes');
+
 		if (filter) {
 			var filterObject 	= filter.toJSON(),
 				matches 		= utils.createMatches(filterObject),
-				items 			= _.pluck(this.props.collection.models, 'attributes'),
 				filteredItems 	= utils.filterMatches(items, matches);
 
 			this.state.collection.set( filteredItems )
 		} else {
-			var items = _.pluck(this.props.collection.models, 'attributes');
 			this.state.collection.set( items );
 		}
 	},
@@ -69,17 +71,20 @@ module.exports = React.createBackboneClass({
 		}
 	},
 
+	//синхронизация коллекций
 	syncCollection : function () {
 		this._applyFilter();
 		this._applySort();
 	},
 
 	_compilingChildAttributes : function (model) {
+		var attrs = {};
+
 		if (this.props.withToggle) {
-			return this._toggleModeAttributes();	
+			this._toggleModeAttributes(attrs);	
 		}
 
-		return {}
+		return attrs;
 	},
 
 	createChildComponent : function (model) {

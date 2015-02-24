@@ -38,7 +38,6 @@ module.exports = Creater.createStyle({
 	initializeModelForPopover : function () {
 		var model = new Backbone.Model(this.state);
 		model.on("change", function (model, options) {
-			//console.log(arguments);
 			this.setState(model.toJSON());
 		}, this)
 		return model;

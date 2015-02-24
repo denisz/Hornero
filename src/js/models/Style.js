@@ -5,10 +5,10 @@ var Transform   = require('../mixins/StylesTransform');
 module.exports = Backbone.Model.extend(_.extend({}, Transform, {
 	transform : {
 		border : function (value, attrs) {
-			attrs['border-top']  = value;
-			attrs['border-left']  = value;
-			attrs['border-right']  = value;
-			attrs['border-bottom']  = value;
+			attrs['borderTop']  = value;
+			attrs['borderLeft']  = value;
+			attrs['borderRight']  = value;
+			attrs['borderBottom']  = value;
 
 			delete attrs['border'];
 			

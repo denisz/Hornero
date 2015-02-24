@@ -30,7 +30,7 @@ module.exports = Creater.createDialog({
 
 	getInitialState : function () {
 		return {
-			id 		: _.uniqueId('ace_'),
+			id 		: _.uniqueId('codemirror_'),
 			value 	: this.props.value
 		}
 	},

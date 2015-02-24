@@ -7,6 +7,7 @@ var Creater 	= require('../../helpers/Creater');
 var UI 		 	= require('_ui');
 var BS 			= require('react-bootstrap');
 var Group 		= require('./Group');
+
 var Actions 	= require('_actions').Editor;
 var floatPanel 	= require('_constants').floatPanel;
 
@@ -14,7 +15,9 @@ module.exports = Creater.createView({
 	displayName : 'Column',
 
 	handleClick : function () {
-		Actions.showFloatPanelWith(floatPanel.LIBRARY);
+		Actions.showFloatPanelWith(floatPanel.LIBRARY, {
+			model : this.props.model
+		});
 	},
 
 	_getEmpty : function () {

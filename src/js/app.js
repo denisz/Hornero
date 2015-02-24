@@ -1,11 +1,13 @@
 /** @jsx React.DOM */
 
 var _ = require('underscore');
-var Backbone = require('backbone');
-var React = require('react/addons');
+
+var Backbone 		= require('backbone');
+var React 			= require('react/addons');
 
 var classnames  = require('classnames');
 var Touchstone  = require('touchstonejs');
+
 var AppContextTypes  = require('./mixins/AppContextTypes');
 
 var config 		= require('./config');
@@ -18,6 +20,7 @@ var views 		= require('./ui/editor/layout');
 var UI   		= require('_ui');
 
 require('./globalReferences');
+
 
 var App = React.createClass({
 	mixins : [ AppContextTypes.parentContext ],
@@ -38,16 +41,15 @@ var App = React.createClass({
 
 	render : function () {
 		var appWrapperClassName = classnames({
-			'app-wrapper' 	: true,
+			'app' 			: true,
 			'is-native-app' : this.state.isNativeApp
 		});
 
-		return (
-			<div className={appWrapperClassName}>
-				<div className="app-wrapper">
-					<UI.Navigation views={views} currentView={this.state.currentView} />
-				</div>
-			</div>)
+		return (<div className={appWrapperClassName}>
+					<div className="app-wrapper">
+						<UI.Navigation views={views} currentView={this.state.currentView} />
+					</div>
+				</div>)
 	}
 })
 

@@ -1,9 +1,9 @@
 /** @jsx React.DOM */
 
-var _ 				= require('underscore');
+var _ 				  = require('underscore');
 var React 	 		= require('react/addons');
 var marked 			= require('marked');
-var hljs 			= require('highlight.js');
+var hljs 			  = require('highlight.js');
 
 marked.setOptions({
 	breaks : true

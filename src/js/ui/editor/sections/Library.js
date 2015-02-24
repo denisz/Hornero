@@ -5,7 +5,8 @@ var UI 			= require('_ui');
 var Backbone 	= require('backbone');
 var BS 			= require('react-bootstrap');
 var FloatPanel 	= require('_constants').floatPanel;
-var Actions 	= require('_actions').Editor;
+var View   		= require('_actions').View;
+var Editor 		= require('_actions').Editor;
 
 var ModeTableView = require('_constants').modeTableView;
 
@@ -16,9 +17,13 @@ module.exports = React.createClass({
 		}
 	},
 
+	propTypes: {
+		model 		: React.PropTypes.object.isRequired		
+	},
+
 	getInitialState : function () {
 		return {
-			mode 		: ModeTableView.TABLE,
+			mode 		: ModeTableView.LIST,
 			collection 	: new Backbone.Collection([], { model : Backbone.Model }),	
 		}
 	},
@@ -37,17 +42,30 @@ module.exports = React.createClass({
 
 	factoryItem : function (model, mode) {
 		var handleClick = this.handleClick.bind(this, model);
-		return <div onClick={handleClick}>{model.get('displayName')}</div>
 		
-		if (mode === ModeTableView.LIST) {
+		return  (<UI.ActionButton className="list-item" component="div" onTap={handleClick}>
+						<span className="item-media">
+							<span className="item-icon">
+								<UI.Icon named="disc" className="lg" dark/>
+							</span>
+						</span>
+						<div className="item-inner">
+							<div className="item-content">
+								<div className="item-title">{model.get('displayName')}</div>
+								<div className="item-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+							</div>
+						</div>
+					</UI.ActionButton >);
 
-		} else if (mode === ModeTableView.TABLE) {
-
-		}
 	},
 
 	handleClick : function (model) {
-		console.log(model);
+		var parentModel = this.props.model,
+			displayName = model.get('displayName'),
+			parentID 	= parentModel.get('id');
+
+		View.addWithName(displayName, parentID);
+		Editor.hideFloatPanel();
 	},
 
 	handleToggleMode : function (mode) {
@@ -57,33 +75,8 @@ module.exports = React.createClass({
 	render : function () {
 		return (
 				<UI.FlexLayout className={this.props.viewClassName}>
-					<UI.Headerbar height="45px">
-						<UI.Toggle value={this.state.mode} onChange={this.handleToggleMode} options={[
-							{ label: '', value: ModeTableView.LIST,  icon : <BS.Glyphicon glyph="th-list" /> },
-							{ label: '', value: ModeTableView.TABLE, icon : <BS.Glyphicon glyph="th-large" /> }
-						]} />
-					</UI.Headerbar>	
-					
-					<UI.FlexBlock scrollable>
-						
+					<UI.FlexBlock scrollable className="library-view">
 						<UI.TableView sort={'displayName'} mode={this.state.mode} collection={this.state.collection} factoryItem={this.factoryItem} filter={this.props.filter}></UI.TableView>
-						
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.NavigationAction>
-
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-right">Right</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-left">Left</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-top">Top</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="show-from-bottom">Bottom</UI.NavigationAction>
-
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade">Fade</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade-contract">Fade contract</UI.NavigationAction>
-						<UI.NavigationAction showView={FloatPanel.SETTINGS} viewTransition="fade-expand">Fade Expand</UI.NavigationAction>
-
-						<UI.NavigationAction onTap={Actions.hideFloatPanel}>Close</UI.NavigationAction>
-
 					</UI.FlexBlock>
 				</UI.FlexLayout>
 			)

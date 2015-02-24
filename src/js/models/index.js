@@ -2,5 +2,6 @@ module.exports = {
 	View  		: require('./View'),
 	Group 		: require('./Group'),
 	Style 		: require('./Style'),
-	Fabric 		: require('./Fabric')
+	Fabric 		: require('./Fabric'),
+	Filter 		: require('./Filter')
 }

@@ -11,7 +11,7 @@ module.exports = {
   }),
 
   'border' : Addons.StackProperties(Styles.Border, {
-  		defines : ['border-left', 'border-right','border-top', 'border-bottom'],
+  		defines : ['borderLeft', 'borderRight','borderTop', 'borderBottom'],
   		label 	: 'Border'
   	})
 }

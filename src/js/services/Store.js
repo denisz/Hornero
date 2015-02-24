@@ -44,7 +44,7 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	onViewAdd : function (payload) {
 		var data 	 	=  HelperPayload.getData(payload),
 			parentId 	=  HelperPayload.getProperty(payload, 'parentId'),
-			model 	 	=  parentId ? this.getViewById(parentId) : this.getAttachModel()
+			model 	 	=  parentId ? this.getViewById(parentId) : this.getAttachModel();
 
 		HelperPayload.deleteProperty(payload, 'parentId');
 
@@ -75,7 +75,7 @@ var Store = Backbone.Model.extend(_.extend({}, listenDispatcher, {
 	*/
 	getViewById : function (id) {
 		var model = this.getAttachModel();
-		return HelperModel.getById(model, id);
+		return HelperModel.getById(id, model);
 	},
 
 	/**mark  - serialize **/
