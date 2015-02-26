@@ -11,8 +11,7 @@ module.exports =  {
 	propTypes: {
 	    collection  	: React.PropTypes.object.isRequired,
 	    componentClass 	: React.PropTypes.any,
-	    createComponent : React.PropTypes.func,
-	    emptyComponent 	: React.PropTypes.element
+	    createComponent : React.PropTypes.func
 	},
 
 	onModelChange : function () {
@@ -21,8 +20,8 @@ module.exports =  {
 
 	getDefaultProps : function () {
 		return {
-			componentClass : 'div',
-			createChildComponent: Creater.createComponent
+			componentClass 			: 'div',
+			createChildComponent 	: Creater.createComponent
 		}
 	},
 

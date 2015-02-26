@@ -1,8 +1,9 @@
 /** @jsx React.DOM */
 
-var React 	 		= require('react/addons');
+var React 	 = require('react/addons');
+var UI 		 = require('_ui');
 
-module.exports = function (component, options) {
+module.exports = function (Component, options) {
 	return React.createClass({
 		getDefaultProps : function () {
 			return options
@@ -10,8 +11,8 @@ module.exports = function (component, options) {
 
 		render : function () {
 			return (<UI.FlexBlock className={this.props.className} height={"auto"}>
-						<Component {...this.props} />
-						<span>{this.props.children}</span>
+						{options.header}
+						<Component {...this.props} />						
 					</UI.FlexBlock>);
 		}
 	})

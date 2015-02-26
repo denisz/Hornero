@@ -11,58 +11,78 @@ var Backbone 		= require('backbone');
 
 var Addons 	= require('_styles:addons')
 
+var bordersDefines = ['borderTop', 'borderBottom', 'borderLeft', 'borderRight'];
+var DefaultValues = {
+	size 	: 0,
+	style 	: 'solid',
+	color 	: '#000'
+};
 
-module.exports = Creater.createStyle({
-	mixins : [Addons.LinkedModelMixin],
+var Border = React.createBackboneClass({
+	displayName : "Border",
+	mixins 		: [Addons.LinkedModelMixin],
+
+	propTypes : {
+		property : React.PropTypes.string.isRequired
+	},
 
 	getDefaultProps : function () {
 		return {
-			label : null
+			property : ''
 		}
 	},
 
 	getInitialState : function () {
-		var model 		= this.getModel(),
-			property 	= this.props.property;
-
-		var obj = Addons.TransformStyle.parse('border', model.get(property)) || {};
-		obj.property = property;
-
-		return obj;
+		var model = this.getModel();
+		return Addons.TransformStyle.parse('border', model.get(this.props.property)) || _.clone(DefaultValues);
 	},
 
 	prepareValueByModel : function (values) {
 		return Addons.TransformStyle.serialize('border', values);
 	},
 
-	initializeModelForPopover : function () {
-		var model = new Backbone.Model(this.state);
+	initializeModelForPopover : function (key) {
+		var model 	= new Backbone.Model(this.state);
+
 		model.on("change", function (model, options) {
 			this.setState(model.toJSON());
 		}, this)
+
 		return model;
 	},
 
 	render : function () {
-		var property 	= this.props.property; 
-		var label 	 	= this.props.label ? <label className="label">{this.props.label}</label> : null;
-		var popover 	= React.createElement(Popover, { model : this.initializeModelForPopover() });
+		var popover = React.createElement(Popover, { model : this.initializeModelForPopover() });
+		var prototypeStyles = {}, property = this.props.property;
 
-		var stylesColorShow = { 
-			backgroundColor : this.state.color 
-		};
+		prototypeStyles[property + 'Width']  = 2;
+		prototypeStyles[property + 'Color'] = this.state.color;
+		prototypeStyles[property + 'Style'] = this.state.style;
+		
+		var styles 	= ReactStyles(prototypeStyles);
+
+		return (<UI.FlexBlock relative>
+					<UI.OverlayTrigger trigger="click" placement="left" overlay={popover}>
+						<div className="e-border" styles={styles}>
+							{this.state.size + "px"}
+						</div>
+		      		</UI.OverlayTrigger>
+				</UI.FlexBlock>)
+	}
+});
+
+
+module.exports = Creater.createStyle({
+	render : function () {
+		var model = this.getModel();
 
 		return (<UI.FlexBlock className={this.props.className} height={"auto"}>
-					<div className="form">
-						<div className="group">
-							<input type="checkbox" />
-							<UI.OverlayTrigger trigger="click" placement="left" overlay={popover}>
-								<span>
-									<span>{this.state.size}px</span><span>{this.state.style}</span><span style={stylesColorShow} className="color-show"></span>
-								</span>
-				      		</UI.OverlayTrigger>
-						</div>
-					</div>
+					<UI.FlexLayout direction="row">
+						<Border property="borderTop" 	key="borderTop" 	model={model} />
+						<Border property="borderRight" 	key="borderRight"	model={model}/>
+						<Border property="borderBottom" key="borderBottom"	model={model}/>
+						<Border property="borderLeft" 	key="borderLeft"	model={model}/>
+					</UI.FlexLayout>
 				</UI.FlexBlock>)
 	}
 });

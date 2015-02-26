@@ -15,7 +15,8 @@ module.exports = Creater.createStyle({
 	getDefaultProps : function () {
 		return {
 			min : 0,
-			max : 100
+			max : 100,
+			step: 1
 		}
 	},
 
@@ -23,8 +24,9 @@ module.exports = Creater.createStyle({
 		var key 	= this.props.property;
 		var min 	= this.props.min;
 		var max 	= this.props.max; 
+		var step 	= this.props.step;
 		var label 	= this.props.label ? <label className="label">{this.props.label}</label> : null;
-		var control = (<input type="range" className="control lg" min={min} max={max} valueLink={this.linkState(key)}/>);
+		var control = (<input type="range" className="control lg" min={min} max={max} step={step} valueLink={this.linkState(key)}/>);
 
 		return (<UI.FlexBlock className={this.props.className} height={"auto"}>
 					{this.props.header}

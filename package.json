@@ -1,11 +1,12 @@
 {
-  "name": "Hornero",
-  "version": "0.0.1",
-  "description": "HTML builder",
-  "private": true,
-  "main": "src/js/app.js",
-  "author": "denis",
-  "dependencies": {
+  "name"            : "Big_Jet_Plane",
+  "version"         : "0.0.1",
+  "description"     : "HTML builder",
+  "private"         : true,
+  "main"            : "src/js/app.js",
+  "author"          : "denis",
+
+  "dependencies"    : {
     "connect-fonts-sourcesanspro"   : "^0.0.3",
     "async"           : "^0.9.0",
     "classnames"      : "^1.0.0",
@@ -45,8 +46,10 @@
     "react-spinkit"     : "^0.5.0",
     "raf"               : "^2.0.4",
     "react-canvas"      : "^0.0.1",
-    "colorable"         : "^1.0.5"
+    "colorable"         : "^1.0.5",
+    "react-slick"       : "^0.3.6"
   },
+
   "devDependencies": {
     "brfs"            : "^1.2.0",
     "browserify"      : "^6.3.3",
@@ -65,6 +68,7 @@
     "watchify"        : "^2.1.1",
     "cordova"         : "^4.1.2"
   },
+  
   "scripts": {
     "watch": "gulp watch"
   }

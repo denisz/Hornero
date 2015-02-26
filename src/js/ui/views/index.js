@@ -7,5 +7,7 @@ module.exports = {
 	Container 	: require('./Container'),
 	Grid 		: require('./Grid'),
 	Text 		: require('./Text'),
-	Picture 	: require('./Picture')
+	Picture 	: require('./Picture'),
+	Slick 		: require('./Slick'),
+	SlickItem 	: require('./SlickItem'),
 }

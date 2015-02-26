@@ -47,5 +47,24 @@ module.exports = {
 		md : 6, //средние экрна
 		lg : 3,//большие экраны
 		isParentable 	: true
+	},
+	Slick : {
+		dots 			: true,
+		infinite 		: true,
+		speed 			: 500,
+		slidesToShow 	: 1,
+		slidesToScroll 	: 1,
+		subviews : [
+			{
+				displayName : 'SlickItem'				
+			},
+			{
+				displayName : 'SlickItem'				
+			},
+			{
+				displayName : 'SlickItem'				
+			}
+		],
+		isParentable 	: true
 	}
 }
